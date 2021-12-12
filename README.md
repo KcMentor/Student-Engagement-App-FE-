@@ -1,4 +1,4 @@
-# student-engagement-app
+# engageapp
 
 ## Project setup
 ```

@@ -1,11 +1,11 @@
 <template>
-<div id='App'>
- <nav>
+  <div id="nav">
+     <nav>
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo"><img :src="image" width="154" height="55" margin-left="0px"></a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <router-link to="/"><a class="brand-logo"><img :src="image" width="154" height="55" margin-left="0px"></a></router-link>
+      <a href="" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><router-link to="/home"><a>Home</a></router-link></li>
+        <li><router-link to="/about"><a>About</a></router-link></li>
         <li><a href="badges.html">Components</a></li>
         <li><a href="collapsible.html">Javascript</a></li>
         <li><a href="mobile.html">Mobile</a></li>
@@ -14,20 +14,18 @@
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
-    <li><a href="sass.html">Sass</a></li>
+    <li><router-link to="/about" style="color:white;">About</router-link></li>
     <li><a href="badges.html">Components</a></li>
     <li><a href="collapsible.html">Javascript</a></li>
     <li><a href="mobile.html">Mobile</a></li>
   </ul>
-
-  <router-view />
-</div>
+  </div>
+  <router-view/>
 </template>
 
 <script>
 import image from "./assets/AppLogo.png"
-//import HomePage from "./components/HomePage.vue"
-//import Login from "./components/Login.vue"
+
 
 
 export default {
@@ -39,22 +37,30 @@ export default {
     }
   },
   components: {
-  //HomePage,
-  //Login
   }
 }
 </script>
-
 <style>
+body{
+  color:white;
+}
+.nav-wrapper{
+    background-color:#350B49;
+    color:white;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  margin-top: 0px;
+  text-align: center;
   
 }
-.nav-wrapper{
-    background-color:#350B49;
+
+.sidenav {
+  background-color:#4E2D68;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
