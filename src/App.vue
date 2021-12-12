@@ -1,10 +1,11 @@
 <template>
-    <nav>
+<div id='App'>
+ <nav>
     <div class="nav-wrapper">
       <a href="#!" class="brand-logo"><img :src="image" width="154" height="55" margin-left="0px"></a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="sass.html"></a></li>
+        <li><router-link to="/home"><a>Home</a></router-link></li>
         <li><a href="badges.html">Components</a></li>
         <li><a href="collapsible.html">Javascript</a></li>
         <li><a href="mobile.html">Mobile</a></li>
@@ -18,12 +19,15 @@
     <li><a href="collapsible.html">Javascript</a></li>
     <li><a href="mobile.html">Mobile</a></li>
   </ul>
-  <HomePage/>
+
+  <router-view />
+</div>
 </template>
 
 <script>
-import HomePage from './components/HomePage.vue'
 import image from "./assets/AppLogo.png"
+//import HomePage from "./components/HomePage.vue"
+//import Login from "./components/Login.vue"
 
 
 export default {
@@ -35,7 +39,8 @@ export default {
     }
   },
   components: {
-    HomePage
+  //HomePage,
+  //Login
   }
 }
 </script>
