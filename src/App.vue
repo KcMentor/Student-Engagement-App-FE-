@@ -6,9 +6,9 @@
       <a href="" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><router-link to="/about"><a>About</a></router-link></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
+        <li><router-link to="/lectureHome"><a>Lecture Home</a></router-link></li>
+        <li><a href="collapsible.html">Login</a></li>
+        <li><a href="mobile.html">Join Class</a></li>
       </ul>
     </div>
   </nav>
@@ -63,4 +63,5 @@ body{
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
 </style>
