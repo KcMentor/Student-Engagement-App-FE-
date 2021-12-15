@@ -4,28 +4,31 @@
       <form class="login-form">
         <div class="row" >
           <div class="col s12 center-align">
-          <h2 style="color:#4e2d68">Lecturer Login</h2>
-          <p style="font-size:1vw;">If You are a Student Please <router-link to="/join">Click Here</router-link> to Join a session</p>
+          <h2 style="color:#4e2d68">Join A Session</h2>
+          <p style="font-size:1vw;">If You are a lecturer please <router-link to="/login">Click Here</router-link> to Login</p>
 
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <i class="material-icons prefix">mail_outline</i>
-            <input class="validate" id="email" type="email">
-            <label for="email" data-error="wrong" data-success="right">Email</label>
+            <i class="material-icons prefix">confirmation_number</i>
+            <input class="validate" id="sessionCode" type="text">
+            <label for="sessionCode" data-error="wrong" data-success="right">Session Code</label>
           </div>
         </div>
         <div class="row">
-          <div class="input-field col s12">
-            <i class="material-icons prefix">lock_outline</i>
-            <input id="password" type="password">
-            <label for="password" >Password</label>
-          </div>
+        <div class="input-field col s6">
+          <input  id="first_name" type="text" class="validate">
+          <label for="first_name">First Name</label>
         </div>
+        <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
         <div class="row">
           <div class="input-field col s12">
-            <a href="#" class="btn waves-effect waves-purple col s4 offset-s4 my-color-back">Login</a>
+            <a href="#" class="btn waves-effect waves-purple col s4 offset-s4 my-color-back">Join Session</a>
           </div>
         </div>
 
@@ -59,7 +62,7 @@ export default {
   color: #4e2d68 !important;
   }
    /* label focus color */
-   .input-field input[type=email]:focus + label {
+   .input-field input[type=text]:focus + label {
      color: #4E2D68 !important;
 }
   .input-field input[type=password]:focus + label {
@@ -70,7 +73,7 @@ export default {
      border-bottom: 1px solid #4E2D68 !important;
      box-shadow: 0 1px 0 0 #4E2D68 !important;
    }
-.input-field input[type=email]:focus {
+.input-field input[type=text]:focus {
      border-bottom: 1px solid #4E2D68 !important;
      box-shadow: 0 1px 0 0 #4E2D68 !important;
 }

@@ -14,7 +14,7 @@
             <router-link to="/lectureHome">Lecture Home</router-link>
           </li>
           <li><router-link to="/login">Login</router-link></li>
-          <li><router-link to="/login">Join Session</router-link></li>
+          <li><router-link to="/join">Join Session</router-link></li>
         </ul>
       </div>
     </nav>
@@ -24,7 +24,7 @@
         <router-link to="/lectureHome"><a>Lecture Home</a></router-link>
       </li>
       <li><router-link to="/login"><a>Login</a></router-link></li>
-      <li><a href="/">Join Class</a></li>
+      <li><a href="/join">Join Class</a></li>
     </ul>
   </div>
   <router-view />
@@ -37,7 +37,7 @@ export default {
   name: "Home",
   data: function () {
     return {
-      image: image
+      image: image,
     };
   },
   components: {},
@@ -48,6 +48,7 @@ export default {
 body {
   color: white;
 }
+
 .nav-wrapper {
   background-color: #350b49;
   color: white;
@@ -63,6 +64,8 @@ body {
   background-color: #4e2d68;
 }
 
+
+  
 #nav a.router-link-exact-active {
   color: #4e2d68;
 }
