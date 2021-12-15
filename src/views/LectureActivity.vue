@@ -1,15 +1,11 @@
 <template>
    <div class="row">
     <div class="col s12 m6">
-      <div class="#EDE7F0">
-        <div class="card-content white-text">
-          <span class="card-title">Card Title</span>
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
+      <div class="card d1c4e9 deep-purple lighten-4">
+        <div class="card-content black-text">
+           
         </div>
         <div class="card-action">
-          <a href="#">This is a link</a>
-          <a href="#">This is a link</a>
         </div>
       </div>
     </div>
@@ -24,5 +20,5 @@ export default {
 </script>
 
 <style>
- 
+
 </style>
