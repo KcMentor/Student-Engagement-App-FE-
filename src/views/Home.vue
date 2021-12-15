@@ -19,7 +19,7 @@
    <div class="row option" style="">
    <div class="col s6 m6 offset-s3 offset-m3">
      <p style="font-size:3vw;margin:0px;color:#350b49;">Students</p>
-   <i class="material-icons " style="font-size:22vw;">people</i>
+   <i class="material-icons " style="font-size:15vw;">people</i>
    <div class="input-field">
             <router-link to="/join"><a class="btn waves-effect waves-purple my-color-back" style="width:20vw">Join Session</a></router-link>
    </div>
