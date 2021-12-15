@@ -1,8 +1,12 @@
 <template>
   <div id="login-page" class="row">
-    <div class="col s12 z-depth-6 card-panel">
+    <div class="col s6 offset-s3  card-panel my-color-card ">
       <form class="login-form">
-        <div class="row">
+        <div class="row" >
+          <div class="col s12 center-align">
+          <h2 style="color:#4e2d68">Lecturer Login</h2>
+          
+          </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
@@ -18,25 +22,12 @@
             <label for="password">Password</label>
           </div>
         </div>
-        <div class="row">          
-          <div class="input-field col s12 m12 l12  login-text">
-              <input type="checkbox" id="remember-me" />
-              <label for="remember-me">Remember me</label>
-          </div>
-        </div>
         <div class="row">
           <div class="input-field col s12">
-            <a href="#" class="btn waves-effect waves-light col s12">Login</a>
+            <a href="#" class="btn waves-effect waves-light col s4 offset-s4 my-color-back">Login</a>
           </div>
         </div>
-        <div class="row">
-          <div class="input-field col s6 m6 l6">
-            <p class="margin medium-small"><a href="#">Register Now!</a></p>
-          </div>
-          <div class="input-field col s6 m6 l6">
-              <p class="margin right-align medium-small"><a href="#">Forgot password?</a></p>
-          </div>          
-        </div>
+
 
       </form>
     </div>
@@ -50,6 +41,35 @@ export default {
 </script>
 
 <style>
-
-
+.my-color{
+          color: #4E2D68
+        }
+.my-color-back{
+          background-color: #4E2D68
+}
+.my-color-card{
+          background-color:#d1c4e9
+        }
+  .material-icons.active {
+  color: #4e2d68 !important;
+  }
+   /* label focus color */
+   .input-field input[type=email]:focus + label {
+     color: #4E2D68 !important;
+}
+  .input-field input[type=password]:focus + label {
+     color: #4E2D68 !important;
+}
+/* label underline focus color */
+.input-field input[type=password]:focus {
+     border-bottom: 1px solid #4E2D68 !important;
+     box-shadow: 0 1px 0 0 #4E2D68 !important;
+   }
+.input-field input[type=email]:focus {
+     border-bottom: 1px solid #4E2D68 !important;
+     box-shadow: 0 1px 0 0 #4E2D68 !important;
+}
+.findbtn{
+  background-color:#4E2D68 !important;
+}
 </style>

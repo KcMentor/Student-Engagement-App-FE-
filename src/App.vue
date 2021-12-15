@@ -11,10 +11,10 @@
         >
         <ul class="right hide-on-med-and-down">
           <li>
-            <router-link to="/lectureHome"><a>Lecture Home</a></router-link>
+            <router-link to="/lectureHome">Lecture Home</router-link>
           </li>
-          <li><router-link to="/login"><a>Login</a></router-link></li>
-          <li><a href="mobile.html">Join Class</a></li>
+          <li><router-link to="/login">Login</router-link></li>
+          <li><router-link to="/login">Join Session</router-link></li>
         </ul>
       </div>
     </nav>
@@ -23,8 +23,8 @@
       <li>
         <router-link to="/lectureHome"><a>Lecture Home</a></router-link>
       </li>
-      <li><a href="collapsible.html">Login</a></li>
-      <li><a href="mobile.html">Join Class</a></li>
+      <li><router-link to="/login"><a>Login</a></router-link></li>
+      <li><a href="/">Join Class</a></li>
     </ul>
   </div>
   <router-view />
@@ -64,6 +64,6 @@ body {
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #4e2d68;
 }
 </style>
