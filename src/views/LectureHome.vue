@@ -4,7 +4,7 @@
     <router-link to="/lecturerActivity"><a>View Activities</a></router-link>
   </div>
 
-  <div class="container center-align selection" style="background-color:#d1c4e9;width:65vw;">
+  <div class="container center-align selection" style="background-color:#d1c4e9;width:80vw;">
    <div class="row option" >
       <div class="col s12 " >
           <table class="highlight  responsive-table">
@@ -32,11 +32,14 @@
           
       </div>
 
-      <a class="waves-effect waves-light btn-large deep-purple lighten-1">Monday</a>
-      <a class="waves-effect waves-light btn-large deep-purple lighten-1">Tuesday</a>
-      <a class="waves-effect waves-light btn-large deep-purple lighten-1">Wednesday</a>
-      <a class="waves-effect waves-light btn-large deep-purple lighten-1">Thursday</a>
-      <a class="waves-effect waves-light btn-large deep-purple lighten-1">Friday</a>
+      <div class="buttons right-align">
+        <a class="waves-effect waves-light btn-large deep-purple lighten-1">Monday</a>
+        <a class="waves-effect waves-light btn-large deep-purple lighten-1">Tuesday</a>
+        <a class="waves-effect waves-light btn-large deep-purple lighten-1">Wednesday</a>
+        <a class="waves-effect waves-light btn-large deep-purple lighten-1">Thursday</a>
+        <a class="waves-effect waves-light btn-large deep-purple lighten-1">Friday</a>
+      </div>
+      
       
     </div>
 
@@ -65,6 +68,16 @@ export default {
 
   .btn-large{
     border-radius: 12px;
+    
+  }
+
+  .buttons{
+    position: relative;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    bottom: 270px;
+    left: 600px;
   }
 
 </style>
