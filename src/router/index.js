@@ -4,6 +4,8 @@ import LectureHome from '../views/LectureHome'
 import HomePage from '../views/Home'
 import lecturerActivity from '../views/LectureActivity'
 import Login from '../views/Login'
+import Join from '../views/JoinSession'
+import Analytics from '../views/Analytics'
 
 const routes = [
   {
@@ -11,7 +13,6 @@ const routes = [
     name: 'Home',
     component: Home
   },
-
   {
     path: "/lectureHome",
     name: "lectureHome",
@@ -30,10 +31,22 @@ const routes = [
     name: "lecturerAcitivity",
     component: lecturerActivity
   },
+
+  {
+    path: "/analytics",
+    name: "analytics",
+    component: Analytics
+  }, 
+
   {
     path: "/login",
     name: "login",
     component: Login
+  },
+  {
+    path: "/join",
+    name: "join",
+    component: Join
   }
 ]
 
