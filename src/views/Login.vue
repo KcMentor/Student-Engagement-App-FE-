@@ -1,11 +1,11 @@
 <template>
   <div id="login-page" class="row">
-    <div class="col s6 offset-s3  card-panel my-color-card ">
+    <div class="col s6 l4 offset-s3 offset-l4 card-panel my-color-card wrapper">
       <form class="login-form">
         <div class="row" >
           <div class="col s12 center-align">
           <h2 style="color:#4e2d68">Lecturer Login</h2>
-          
+
           </div>
         </div>
         <div class="row">
@@ -19,12 +19,12 @@
           <div class="input-field col s12">
             <i class="material-icons prefix">lock_outline</i>
             <input id="password" type="password">
-            <label for="password">Password</label>
+            <label for="password" >Password</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <a href="#" class="btn waves-effect waves-light col s4 offset-s4 my-color-back">Login</a>
+            <a href="#" class="btn waves-effect waves-purple col s4 offset-s4 my-color-back">Login</a>
           </div>
         </div>
 
@@ -41,6 +41,16 @@ export default {
 </script>
 
 <style>
+.wrapper{
+  margin: 0;
+  position: absolute;
+  top: 35%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+ .input-field label {
+     color: #4e2d68;
+}
 .my-color{
           color: #4E2D68
         }
