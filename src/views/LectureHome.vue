@@ -30,8 +30,7 @@
               </tbody>
           </table>
           
-      </div>
-
+        
       <div class="buttons right-align">
         <a class="waves-effect waves-light btn-large deep-purple lighten-1">Monday</a>
         <a class="waves-effect waves-light btn-large deep-purple lighten-1">Tuesday</a>
@@ -39,12 +38,46 @@
         <a class="waves-effect waves-light btn-large deep-purple lighten-1">Thursday</a>
         <a class="waves-effect waves-light btn-large deep-purple lighten-1">Friday</a>
       </div>
+
+      </div>
+
       
       
     </div>
 
    
   </div>
+
+   <div class=" card-panel my-color-card wrapper1">
+        <table class="highlight centered responsive-table">
+            <thead>
+            <tr>
+                <th>LAST CLASS ENGAGEMENT</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>N/A</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class=" card-panel my-color-card wrapper2 ">
+        <table class="highlight centered responsive-table">
+            <thead>
+            <tr>
+                <th>MOST ENGAGED STUDENT</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>N/A</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </template>
 
 <script>
@@ -63,21 +96,35 @@ export default {
   }
 
   table{
+    position: relative;
+    left: 20px;
     width: 400px;
   }
 
   .btn-large{
+    position: relative;
     border-radius: 12px;
-    
   }
 
   .buttons{
-    position: relative;
+    position: absolute;
     width: fit-content;
     display: flex;
     flex-direction: column;
-    bottom: 270px;
-    left: 600px;
+    bottom: 20px;
+    top: 20px;
+    left: 800px;
   }
+
+  .wrapper1{
+    border-radius: 12px;
+    color:  #4E2D68;
+  }
+
+  .wrapper2{
+    border-radius: 12px;
+    color:  #4E2D68;
+  }
+
 
 </style>
