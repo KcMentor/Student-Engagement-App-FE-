@@ -13,6 +13,7 @@
           <li>
             <router-link to="/lectureHome">Lecture Home</router-link>
           </li>
+          <li><router-link to="/analytics">Analytics</router-link></li>
           <li><router-link to="/login">Login</router-link></li>
           <li><router-link to="/join">Join Session</router-link></li>
         </ul>
