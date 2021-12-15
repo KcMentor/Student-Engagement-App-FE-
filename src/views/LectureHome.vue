@@ -1,15 +1,15 @@
 <template>
-  <div class= "lecturehome">
+  <div class="lecturehome">
     <h1>Lecture Home</h1>
-    </div>
+    <router-link to="/lecturerActivity"><a>View Activities</a></router-link>
+  </div>
 </template>
 
 <script>
 // @ is an alias to /src
 
 export default {
-  name: 'Lecture Home',
-  components: {
-  }
-}
+  name: "Lecture Home",
+  components: {},
+};
 </script>
