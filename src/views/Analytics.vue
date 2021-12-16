@@ -2,8 +2,8 @@
 
 <template>
    
-     <div class=" card-panel my-color-card wrapper">
-        <table class="highlight centered responsive-table">
+     <div class=" card-panel my-color-card wrapper1 an-1">
+        <table class="highlight centered responsive-table tb-1">
             <thead>
             <tr>
                 <th>Sessions</th>
@@ -25,7 +25,7 @@
     </div>
 
     <div class=" card-panel my-color-card wrapper2">
-        <table class="highlight centered responsive-table">
+        <table class="highlight centered responsive-table tb-1">
             <thead>
             <tr>
                 <th>Students</th>
@@ -69,7 +69,7 @@
     border-radius: 12px;
 }
 
-.wrapper{
+.wrapper1{
     width: fit-content;
     height: 250px;
     border: 1px solid #c3c3c3;
@@ -81,7 +81,7 @@
 }
 
 
-table{
+.tb-1{
     position: relative;
     left: auto;
 }
