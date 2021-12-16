@@ -4,10 +4,10 @@
     <router-link to="/lecturerActivity"><a>View Activities</a></router-link>
   </div>
 
-  <div class="container center-align selection" style="background-color:#d1c4e9;width:80vw;">
+  <div class="Home-container center-align selection" style="background-color:#d1c4e9;width:80vw;">
    <div class="row option" >
       <div class="col s12 " >
-          <table class="highlight  responsive-table">
+          <table class="highlight  responsive-table Lec-home-table">
               <thead>
               <tr>
                   <th>Sessions</th>
@@ -31,12 +31,12 @@
           </table>
           
         
-      <div class="buttons right-align">
-        <a class="waves-effect waves-light btn-large deep-purple lighten-1">Monday</a>
-        <a class="waves-effect waves-light btn-large deep-purple lighten-1">Tuesday</a>
-        <a class="waves-effect waves-light btn-large deep-purple lighten-1">Wednesday</a>
-        <a class="waves-effect waves-light btn-large deep-purple lighten-1">Thursday</a>
-        <a class="waves-effect waves-light btn-large deep-purple lighten-1">Friday</a>
+      <div class="buttons-group right-align">
+        <a class="waves-effect waves-light btn-large deep-purple lighten-1 button-individual">Monday</a>
+        <a class="waves-effect waves-light btn-large deep-purple lighten-1 button-individual">Tuesday</a>
+        <a class="waves-effect waves-light btn-large deep-purple lighten-1 button-individual">Wednesday</a>
+        <a class="waves-effect waves-light btn-large deep-purple lighten-1 button-individual">Thursday</a>
+        <a class="waves-effect waves-light btn-large deep-purple lighten-1 button-individual">Friday</a>
       </div>
 
       </div>
@@ -48,7 +48,7 @@
    
   </div>
 
-      <div class=" card-panel my-color-card wrapper1">
+      <div class=" card-panel my-color-card class-engagement-wrapper">
         <table class="highlight centered responsive-table">
             <thead>
             <tr>
@@ -64,7 +64,7 @@
         </table>
     </div>
    
-      <div class=" card-panel my-color-card wrapper2 ">
+      <div class=" card-panel my-color-card student-engaged-wrapper ">
         <table class="highlight centered responsive-table">
             <thead>
             <tr>
@@ -94,23 +94,25 @@ export default {
 </script>
 
 <style>
-  .container{
+  .Home-container{
     position: relative;
     color:  #4E2D68;
+    margin: 0 auto;
   }
 
-  table{
+  .Lec-home-table{
     position: relative;
-    left: 20px;
+    left: 80px;
     width: 400px;
+    left: auto;
   }
 
-  .btn-large{
+  .button-individual{
     position: relative;
     border-radius: 12px;
   }
 
-  .buttons{
+  .buttons-group{
     position: absolute;
     width: fit-content;
     display: flex;
@@ -121,7 +123,7 @@ export default {
     left: 800px;
   }
 
-  .wrapper1{
+  .class-engagement-wrapper{
     border-radius: 12px;
     color:  #4E2D68;
     width: 450px;
@@ -131,18 +133,13 @@ export default {
     height: 250px;
   }
 
-  .wrapper2{
+  .student-engaged-wrapper{
     border-radius: 12px;
     color:  #4E2D68;
-    position: relative;
-    right: 30px;
+    position: absolute;
+    left: 30px;
     top: 650px;
     width: 450px;
   }
 
-  
-  table{
-    position: relative;
-    left: auto;
-  }
 </style>
