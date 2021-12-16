@@ -6,6 +6,7 @@ import lecturerActivity from '../views/LectureActivity'
 import Login from '../views/Login'
 import Join from '../views/JoinSession'
 import Analytics from '../views/Analytics'
+import LectureSession from '../views/LectureSession'
 
 const routes = [
   {
@@ -42,6 +43,11 @@ const routes = [
     path: "/login",
     name: "login",
     component: Login
+  },
+  {
+    path: "/lectureSession",
+    name: "lectrueSession",
+    component: LectureSession
   },
   {
     path: "/join",

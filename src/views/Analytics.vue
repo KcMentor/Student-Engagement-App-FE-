@@ -57,16 +57,6 @@
 
 <style>
 
-.wrapper{
-    width: fit-content;
-    height: 250px;
-    border: 1px solid #c3c3c3;
-    position: absolute;
-    bottom: 0px; 
-    right: 30px;
-    color: #4E2D68;
-    border-radius: 12px;
-}
 
 .wrapper2{
     width: fit-content;
@@ -78,6 +68,18 @@
     color: #4E2D68;
     border-radius: 12px;
 }
+
+.wrapper{
+    width: fit-content;
+    height: 250px;
+    border: 1px solid #c3c3c3;
+    position: absolute;
+    bottom: 0px; 
+    right: 30px;
+    color: #4E2D68;
+    border-radius: 12px;
+}
+
 
 table{
     position: relative;
