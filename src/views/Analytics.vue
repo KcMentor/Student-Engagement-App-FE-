@@ -58,80 +58,31 @@
 <style>
 
 .wrapper{
-    width: 600px;
+    width: fit-content;
     height: 250px;
     border: 1px solid #c3c3c3;
     position: absolute;
     bottom: 0px; 
-    right:15px;
+    right: 30px;
     color: #4E2D68;
+    border-radius: 12px;
 }
 
 .wrapper2{
-    width: 600px;
-    height: 200px;
+    width: fit-content;
+    height: 250px;
     border: 1px solid #c3c3c3;
     position: absolute;
     bottom: 0px; 
-    left: 15px;
+    left: 30px;
     color: #4E2D68;
+    border-radius: 12px;
 }
 
-.carousel-item {
-    display:flex;
-    justify-content: center;
+table{
+    position: relative;
+    left: auto;
 }
 
-.carousel {
-    position:relative;
-    overflow: hidden;
-    width:800px;
-    height:500px;
-    z-index:10;
-}
-    
-.btn {
-    padding:5px 10px;
-    background-color:rgba(0,0,0,0.5);
-    border:1px solid transparent;
-    margin:5px 10px;
-    color:#FFF;
-    height:50px;
-    width:50px;
-    position:absolute;
-    margin-top:-25px;
-    z-index:2;
-}
-    
-.btn:hover {
-    cursor: pointer;
-}
-    
-.btn:focus{
-    outline:none;
-}
-    
-.btn-next {
-    top:50%;
-    right:0;
-}
-    
-.btn-prev {
-    top:50%;
-    left:0;
-}
-    
-.carousel-slider {
-    position:absolute;
-    top:0;
-    left:0;
-    bottom:0;
-    right:0;
-}
-    
-.carousel-slider img {
-    width:100%;
-    height:100%;
-}
 
 </style>
