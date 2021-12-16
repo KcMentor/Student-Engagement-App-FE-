@@ -1,12 +1,12 @@
 <template>
-  <div id="login-page" class="row">
+  <div id="login-page" class="row" style="width:100vw">
     <div class="col s6 l4 offset-s3 offset-l4 card-panel my-color-card wrapper">
       <form class="login-form">
         <div class="row" >
           <div class="col s12 center-align">
-          <h2 style="color:#4e2d68">Lecturer Login</h2>
-          <p style="font-size:1vw;">If You are a Student Please <router-link to="/join">Click Here</router-link> to Join a session</p>
-
+          <h2 style="color:#4e2d68;font-size:5vw;">Lecturer Login</h2>
+          <p style="font-size:3vw;">If You are a Student Please <router-link to="/join">Click Here</router-link> to Join a session</p>
+          <p v-if="Invalid" style="font-size:2vw">The Credentials entered are not Valid</p>
           </div>
         </div>
         <div class="row">
@@ -25,7 +25,7 @@
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <button id="loginButton" v-on:click="login" class="btn waves-effect waves-purple col s4 offset-s4 my-color-back">Login</button>
+            <button id="loginButton" v-on:click="login" class="btn waves-effect waves-purple  col s12  my-color-back ">Login</button>
           </div>
         </div>
 
@@ -39,6 +39,11 @@
 import firebase from "firebase"
 
 export default {
+  data: function(){
+    return{
+      Invalid : false
+    }
+  },
   name: "Login",
   components: {},
   methods: {
@@ -50,6 +55,7 @@ export default {
         //Signed in
         var user = userCredential.user;
       }).catch((error) => {
+        this.Invalid = true;
         var errorCode = error.code;
         var errorMessage = error.message;
         console.log(errorMessage)
