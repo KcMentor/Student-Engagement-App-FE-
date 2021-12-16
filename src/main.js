@@ -3,6 +3,9 @@ import App from './App.vue'
 import router from './router'
 import firebase from 'firebase'
 import { getDatabase } from "firebase/database";
+import { getFirestore } from "firebase/firestore";
+import { doc, setDoc, deleteDoc } from "firebase/firestore";
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyDYipVLwE-yJmQ0wRgW8Gl6BksV0j4uyYM",
@@ -17,6 +20,21 @@ const firebaseConfig = {
 
 const app = firebase.initializeApp(firebaseConfig)
 
-const database = getDatabase(app);
+const realTimeDb = getDatabase(app);
+const fireStoreDb = getFirestore();
+
+async function createQuestionBank(db, collection, docs) {
+    await setDoc(doc(db, collection, docs.name), docs);
+}
+
+async function removeQuestion(db, collection, docs) {
+    await deleteDoc(doc(db, collection, docs.name))
+}
+
+async function removeQuestionBank(db, collection, docs) {
+    await deleteDoc(doc(db, collection, docs.name))
+}
+
+
 
 createApp(App).use(router).mount('#app')
