@@ -20,8 +20,8 @@ const firebaseConfig = {
 
 const app = firebase.initializeApp(firebaseConfig)
 
-const realTimeDb = getDatabase(app);
-const fireStoreDb = getFirestore();
+//const realTimeDb = getDatabase(app);
+//const fireStoreDb = getFirestore();
 
 async function createQuestionBank(db, collection, docs) {
     await setDoc(doc(db, collection, docs.name), docs);
