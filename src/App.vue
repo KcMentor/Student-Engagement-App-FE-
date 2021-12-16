@@ -9,11 +9,7 @@
         <a href="" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li><router-link to="/analytics">Analytics</router-link></li>
-<<<<<<< HEAD
-          <li v-if="!loggedIn"><router-link to="/login">Login</router-link></li>
-=======
           <li v-if="!LoggedIn"><router-link to="/login">Login</router-link></li>
->>>>>>> 0ae73dc9d9cf2f40f49d448b9a2c680e5ad8aa75
           <li v-else><a v-on:click="logout">Logout</a></li>
           <li><router-link to="/join">Join Session</router-link></li>
         </ul>
@@ -24,11 +20,7 @@
       <li>
         <router-link to="/lectureHome"><a>Lecture Home</a></router-link>
       </li>
-<<<<<<< HEAD
-      <li v-if="!loggedIn"><router-link to="/login">Login</router-link></li>
-=======
       <li v-if="!LoggedIn"><router-link to="/login">Login</router-link></li>
->>>>>>> 0ae73dc9d9cf2f40f49d448b9a2c680e5ad8aa75
       <li v-else><a v-on:click="logout">Logout</a></li>
       <li><a href="/join">Join Class</a></li>
     </ul>
@@ -47,22 +39,6 @@ export default {
   data: function () {
     return {
       image: image,
-<<<<<<< HEAD
-      loggedIn: false
-  
-    };
-  },
-  mounted(){
-    firebase.auth().onAuthStateChanged(user =>{
-      if(user){
-        this.loggedIn = true;
-      }
-      else{
-        this.logged = false;
-      }
-    })
-  }
-=======
       LoggedIn : false
     };
   },
@@ -95,7 +71,6 @@ export default {
       })
     }
   },
->>>>>>> 0ae73dc9d9cf2f40f49d448b9a2c680e5ad8aa75
 };
 </script>
 

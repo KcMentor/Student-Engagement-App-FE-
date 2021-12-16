@@ -1,4 +1,4 @@
-import { createApp } from 'vue'
+import { createApp, VueElement } from 'vue'
 import App from './App.vue'
 import router from './router'
 import firebase from 'firebase'
@@ -15,28 +15,4 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig)
 
-<<<<<<< HEAD
-var loginChecker;
-
-
 createApp(App).use(router).mount('#app')
-
-firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/firebase.User
-      var uid = user.uid;
-      console.log("signed IN")
-      loginChecker=true;
-      router.push('lectureHome')
-      // ...
-    } else {
-      // User is signed out
-      // ...
-      console.log("Not signed in")
-    }
-  });
-=======
-
-createApp(App).use(router).mount('#app')
->>>>>>> 0ae73dc9d9cf2f40f49d448b9a2c680e5ad8aa75
