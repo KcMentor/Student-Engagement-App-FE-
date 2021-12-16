@@ -6,13 +6,8 @@
           ><a class="brand-logo"
             ><img :src="image" width="154" height="55" margin-left="0px" /></a
         ></router-link>
-        <a href="" data-target="mobile-demo" class="sidenav-trigger"
-          ><i class="material-icons">menu</i></a
-        >
+        <a href="" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li>
-            <router-link to="/lectureHome">Lecture Home</router-link>
-          </li>
           <li><router-link to="/analytics">Analytics</router-link></li>
           <li v-if="!user"><router-link to="/login">Login</router-link></li>
           <li v-else><a v-on:click="logout">Logout</a></li>
