@@ -37,6 +37,7 @@
 
 <script>
 import firebase from "firebase"
+import M from 'materialize-css'
 
 export default {
   data: function(){
@@ -46,6 +47,11 @@ export default {
   },
   name: "Login",
   components: {},
+  mounted(){
+    document.addEventListener('DOMContentLoaded', function() {
+      M.AutoInit();
+  });
+  },
   methods: {
     login: function(){
       var userEmail = document.getElementById("email").value;
