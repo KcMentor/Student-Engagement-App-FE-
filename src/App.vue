@@ -9,7 +9,7 @@
         <a href="" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li><router-link to="/analytics">Analytics</router-link></li>
-          <li v-if="!user"><router-link to="/login">Login</router-link></li>
+          <li v-if="!loggedIn"><router-link to="/login">Login</router-link></li>
           <li v-else><a v-on:click="logout">Logout</a></li>
           <li><router-link to="/join">Join Session</router-link></li>
         </ul>
@@ -20,7 +20,7 @@
       <li>
         <router-link to="/lectureHome"><a>Lecture Home</a></router-link>
       </li>
-      <li v-if="!loginChecker"><router-link to="/login">Login</router-link></li>
+      <li v-if="!loggedIn"><router-link to="/login">Login</router-link></li>
       <li v-else><a v-on:click="logout">Logout</a></li>
       <li><a href="/join">Join Class</a></li>
     </ul>
@@ -38,18 +38,20 @@ export default {
   data: function () {
     return {
       image: image,
+      loggedIn: false
+  
     };
   },
-  components: {},
-  methods: {
-    logout: function(){
-      firebase.auth().signOut().then(() =>{
-        router.push('Home')
-      }).catch((error) => {
-        console.log(error)
-      })
-    }
-  },
+  mounted(){
+    firebase.auth().onAuthStateChanged(user =>{
+      if(user){
+        this.loggedIn = true;
+      }
+      else{
+        this.logged = false;
+      }
+    })
+  }
 };
 </script>
 
