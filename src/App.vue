@@ -47,6 +47,7 @@ import M from 'materialize-css'
 import firebase from 'firebase'
 import "firebase/auth";
 import router from './router';
+import  db  from './main.js'
 
 export default {
   name: "Home",
@@ -54,6 +55,7 @@ export default {
     return {
       image: image,
       LoggedIn : false
+
     };
   },
   mounted(){
@@ -65,6 +67,14 @@ export default {
       this.LoggedIn = true;
       console.log("signed IN")
       router.push({name: 'lectureHome', params: {uid}})
+      const userRef = db.collection('users').doc(uid).get();
+      if(!userRef.exists){
+        
+        console.log("Doesnt Exist")
+      } else {
+        console.log("exists")
+      }
+
       // ...
     } else {
       // User is signed out
@@ -73,7 +83,6 @@ export default {
       console.log("Not signed in")
     }
   });
-    
   },
   components: {},
 

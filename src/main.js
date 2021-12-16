@@ -2,8 +2,7 @@ import { createApp, VueElement } from 'vue'
 import App from './App.vue'
 import router from './router'
 import firebase from 'firebase'
-import { getDatabase } from "firebase/database";
-import { getFirestore } from "firebase/firestore";
+import firestore from 'firebase/firestore'
 import { doc, setDoc, deleteDoc } from "firebase/firestore";
 
 
@@ -20,8 +19,7 @@ const firebaseConfig = {
 
 const app = firebase.initializeApp(firebaseConfig)
 
-//const realTimeDb = getDatabase(app);
-//const fireStoreDb = getFirestore();
+const db = app.firestore();
 
 async function createQuestionBank(db, collection, docs) {
     await setDoc(doc(db, collection, docs.name), docs);
@@ -35,6 +33,6 @@ async function removeQuestionBank(db, collection, docs) {
     await deleteDoc(doc(db, collection, docs.name))
 }
 
-
+export default db;
 
 createApp(App).use(router).mount('#app')
