@@ -67,24 +67,13 @@ export default {
       this.LoggedIn = true;
       console.log("signed IN")
       router.push({name: 'lectureHome', params: {uid}})
-      const userRef = db.collection('users').doc(uid);
-      console.log(userRef.exists)
       const data={
-        text: 'What is water?',
-        stats2 : ['wet', 'solid', 'ahds']
       }
-      const data2={
-       green: 'yellow'
-      }
-      if(!userRef){
-        const res = db.collection('users').doc(uid).collection('Bank').doc('question1').set(data);
+      try{
+        const res = db.collection('users').doc(uid).collection('Bank').doc('question1').update(data);
+      }catch(error){
         console.log("Doesnt Exist")
-        console.log(res)
-      } else {
-        console.log("exists")
-      }
-
-      // ...
+      }  // ...
     } else {
       // User is signed out
       // ...
