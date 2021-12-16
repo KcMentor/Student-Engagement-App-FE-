@@ -15,6 +15,7 @@
           </li>
           <li><router-link to="/analytics">Analytics</router-link></li>
           <li><router-link to="/lectureSession">Lecture Session</router-link></li>
+          <li><router-link to="/lectureScreen">Lecture</router-link></li>
           <li><router-link to="/login">Login</router-link></li>
           <li><router-link to="/join">Join Session</router-link></li>
         </ul>

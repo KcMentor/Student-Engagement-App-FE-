@@ -48,6 +48,8 @@
    
   </div>
 
+    
+
       <div class=" card-panel my-color-card class-engagement-wrapper">
         <table class="highlight centered responsive-table">
             <thead>
@@ -128,16 +130,15 @@ export default {
     color:  #4E2D68;
     width: 450px;
     position: absolute;
-    right: 30px;
+    right: 130px;
     top: 650px;
-    height: 250px;
   }
 
   .student-engaged-wrapper{
     border-radius: 12px;
     color:  #4E2D68;
     position: absolute;
-    left: 30px;
+    left: 130px;
     top: 650px;
     width: 450px;
   }

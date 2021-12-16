@@ -65,7 +65,6 @@ export default {
         height: 250px;
         position: absolute;
         display: flex;
-        flex-direction: row;
         row-gap: 10px;
     }
 

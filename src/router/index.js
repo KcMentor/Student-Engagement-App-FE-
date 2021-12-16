@@ -7,6 +7,7 @@ import Login from '../views/Login'
 import Join from '../views/JoinSession'
 import Analytics from '../views/Analytics'
 import LectureSession from '../views/LectureSession'
+import LectureScreen from '../views/LectureScreen'
 
 const routes = [
   {
@@ -48,6 +49,11 @@ const routes = [
     path: "/lectureSession",
     name: "lectrueSession",
     component: LectureSession
+  },
+  {
+    path: "/lectureScreen",
+    name: "lectrueScreen",
+    component: LectureScreen
   },
   {
     path: "/join",
