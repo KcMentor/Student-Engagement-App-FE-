@@ -16,7 +16,7 @@
           <li v-if="!LoggedIn"><router-link to="/login">Login</router-link></li>
           
           <li v-else><a v-on:click="logout">Logout</a></li>
-
+          <li v-if="LoggedIn"><router-link to="/lectureHome">Home</router-link></li>
           <li v-if="LoggedIn"><router-link to="/lecturerActivity">Lecturer Activity</router-link></li>
           <li v-if="!LoggedIn"><router-link to="/join">Join Session</router-link></li>
         </ul>
@@ -24,12 +24,12 @@
     </nav>
 
     <ul class="sidenav" id="mobile-demo">
-      <li>
+      <li v-if="LoggedIn">
         <router-link to="/lectureHome"><a>Lecture Home</a></router-link>
       </li>
       <li v-if="!LoggedIn"><router-link to="/login">Login</router-link></li>
       <li v-else><a v-on:click="logout">Logout</a></li>
-      <li><a href="/join">Join Class</a></li>
+      <li v-if="!LoggedIn"><a href="/join">Join Session</a></li>
     </ul>
   </div>
   <router-view />
@@ -58,7 +58,7 @@ export default {
       var uid = user.uid;
       this.LoggedIn = true;
       console.log("signed IN")
-      router.push({name: 'lectureHome', params: { id: '123'}})
+      router.push({name: 'lectureHome', params: {uid}})
       // ...
     } else {
       // User is signed out

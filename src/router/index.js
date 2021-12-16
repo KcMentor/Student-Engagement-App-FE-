@@ -16,7 +16,7 @@ const routes = [
     component: Home
   },
   {
-    path: "/lectureHome",
+    path: "/lectureHome/:uid",
     name: "lectureHome",
     component: LectureHome,
     meta:{requiresAuth: true }
