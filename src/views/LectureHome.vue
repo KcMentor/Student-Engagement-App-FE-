@@ -1,9 +1,11 @@
 <template>
   <div class="container">
+    <div class="col ">
     <div class="row">
       <p style="margin:1px 0px 0px 0px;">Date: {{date}}</p>
       <p style="margin:1px 0px 0px 0px;">Time: {{time}}</p>
     </div>
+  </div>
   </div>
   <div class="container center-align selection" style="background-color:#d1c4e9;width:65vw;height:50vh;">
    <div class="row option" >
