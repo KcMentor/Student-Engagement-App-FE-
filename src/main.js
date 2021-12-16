@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import firebase from 'firebase'
 
+
 const firebaseConfig = {
     apiKey: "AIzaSyDYipVLwE-yJmQ0wRgW8Gl6BksV0j4uyYM",
     authDomain: "engaged-app.firebaseapp.com",
@@ -14,5 +15,20 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig)
+
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+      var uid = user.uid;
+      console.log("signed IN")
+      router.push('lectureHome')
+      // ...
+    } else {
+      // User is signed out
+      // ...
+      console.log("Not signed in")
+    }
+  });
 
 createApp(App).use(router).mount('#app')

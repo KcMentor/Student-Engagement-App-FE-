@@ -42,6 +42,7 @@ export default {
     };
   },
   components: {},
+  
 };
 </script>
 
@@ -65,8 +66,6 @@ body {
   background-color: #4e2d68;
 }
 
-
-  
 #nav a.router-link-exact-active {
   color: #4e2d68;
 }
