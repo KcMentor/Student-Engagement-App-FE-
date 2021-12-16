@@ -1,52 +1,28 @@
 <template>
-  <div class="lecturehome">
-    <h1>Lecture Home</h1>
-    <router-link to="/lecturerActivity"><a>View Activities</a></router-link>
+  <div class="container">
+    <div class="col ">
+    <div class="row">
+      <p style="margin:1px 0px 0px 0px;">Date: {{date}}</p>
+      <p style="margin:1px 0px 0px 0px;">Time: {{time}}</p>
+    </div>
+  </div>
+  </div>
+  <div class="container center-align selection" style="background-color:#d1c4e9;width:65vw;height:50vh;">
+   <div class="row option" >
+    <div class="col s12 center align" >
+   <p style="font-size:5vw;margin:0px;color:#350b49">Lecturers</p>
+   <i class="material-icons" style="font-size:15vw;">school</i>
+   <div class="input-field">
+            <router-link to="/login"><a class="btn waves-effect waves-purple my-color-back" style="width:20vw">Start Session</a></router-link>
+   </div>
+   </div>
+   </div>
   </div>
 
-  <div class="Home-container center-align selection" style="background-color:#d1c4e9;width:80vw;">
-   <div class="row option" >
-      <div class="col s12 " >
-          <table class="highlight  responsive-table Lec-home-table">
-              <thead>
-              <tr>
-                  <th>Sessions</th>
-              </tr>
-              </thead>
 
-              <tbody>
-              <tr>
-                  <td><b>COMP 3602 - Theory of Computing</b>
-                  <br> 10:00am - 12:00pm</td>
-              </tr>
-              <tr>
-                  <td><b>COMP 3611 - Data Structures</b>
-                    <br> 12:00pm - 1:00pm</td>
-              </tr>
-              <tr>
-                  <td><b>COMP 3605 - Data Analytics</b>
-                    <br> 1:00pm - 2:00pm</td>
-              </tr>
-              </tbody>
-          </table>
-          
-        
-      <div class="buttons-group right-align">
-        <a class="waves-effect waves-light btn-large deep-purple lighten-1 button-individual">Monday</a>
-        <a class="waves-effect waves-light btn-large deep-purple lighten-1 button-individual">Tuesday</a>
-        <a class="waves-effect waves-light btn-large deep-purple lighten-1 button-individual">Wednesday</a>
-        <a class="waves-effect waves-light btn-large deep-purple lighten-1 button-individual">Thursday</a>
-        <a class="waves-effect waves-light btn-large deep-purple lighten-1 button-individual">Friday</a>
-      </div>
-
-      </div>
-
-      
-      
-    </div>
 
    
-  </div>
+
 
       <div class=" card-panel my-color-card class-engagement-wrapper">
         <table class="highlight centered responsive-table">
@@ -90,63 +66,37 @@ import firebase from 'firebase'
 export default {
   data(){
     return{
-      loggedIn: false
+      loggedIn: false,
+      date: null,
+      time:null
     }
   },
-  methods:{
-    
+   methods:{
+        currentDateTime() {
+      const current = new Date();
+      const date = current.getFullYear()+'-'+(current.getMonth()+1)+'-'+current.getDate();
+      const time = current.getHours() + ":" + current.getMinutes().toString().padStart(2,'0'); 
+      
+      this.time = time;
+      this.date = date;
+    },
+   },
+    mounted(){
+      this.currentDateTime();
     }
 
 };
 </script>
 
 <style>
-  .Home-container{
-    position: relative;
-    color:  #4E2D68;
-    margin: 0 auto;
-  }
 
-  .Lec-home-table{
-    position: relative;
-    left: 80px;
-    width: 400px;
-    left: auto;
-  }
-
-  .button-individual{
-    position: relative;
-    border-radius: 12px;
-  }
-
-  .buttons-group{
-    position: absolute;
-    width: fit-content;
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-    bottom: 20px;
-    top: 20px;
-    left: 800px;
-  }
-
-  .class-engagement-wrapper{
-    border-radius: 12px;
-    color:  #4E2D68;
-    width: 450px;
-    position: absolute;
-    right: 30px;
-    top: 650px;
-    height: 250px;
-  }
-
-  .student-engaged-wrapper{
-    border-radius: 12px;
-    color:  #4E2D68;
-    position: absolute;
-    left: 30px;
-    top: 650px;
-    width: 450px;
-  }
 
 </style>
+
+<!-- <div class="buttons-group right-align">
+        <a class="waves-effect waves-light btn-large deep-purple lighten-1 button-individual">Monday</a>
+        <a class="waves-effect waves-light btn-large deep-purple lighten-1 button-individual">Tuesday</a>
+        <a class="waves-effect waves-light btn-large deep-purple lighten-1 button-individual">Wednesday</a>
+        <a class="waves-effect waves-light btn-large deep-purple lighten-1 button-individual">Thursday</a>
+        <a class="waves-effect waves-light btn-large deep-purple lighten-1 button-individual">Friday</a>
+      </div> -->
