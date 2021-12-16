@@ -7,6 +7,7 @@ import Login from '../views/Login'
 import Join from '../views/JoinSession'
 import Analytics from '../views/Analytics'
 import LectureSession from '../views/LectureSession'
+import firebase from "firebase"
 
 const routes = [
   {
@@ -17,10 +18,8 @@ const routes = [
   {
     path: "/lectureHome",
     name: "lectureHome",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: LectureHome
+    component: LectureHome,
+    meta:{requiresAuth: true }
   },
   {
     path: "/home",
@@ -60,6 +59,18 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes,
   mode: "history",
+})
+
+router.beforeEach((to,from,next) =>{
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth)
+  const  isAthenticated = firebase.auth().currentUser;
+
+  if(requiresAuth && !isAthenticated){
+    next("/login");
+  }
+  else{
+    next();
+  }
 })
 
 export default router
