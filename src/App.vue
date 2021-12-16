@@ -69,11 +69,15 @@ export default {
       router.push({name: 'lectureHome', params: {uid}})
       const data={
       }
-      try{
-        const res = db.collection('users').doc(uid).collection('Bank').doc('question1').update(data);
-      }catch(error){
-        console.log("Doesnt Exist")
-      }  // ...
+      db.collection('users').doc(uid).collection('Bank').doc('qBank1').collection('Questions').doc('question1')
+  .update({data})
+  .then(() => {
+    // update successful (document exists)
+  })
+  .catch((error) => {
+    // console.log('Error updating user', error); // (document does not exists)
+    db.collection('users').doc(uid).collection('Bank').doc('qBank1').collection('Questions').doc('question1').set({data});
+  });
     } else {
       // User is signed out
       // ...
@@ -81,12 +85,10 @@ export default {
       console.log("Not signed in")
     }
   });
-  document.addEventListener('DOMContentLoaded', function() {
-      M.AutoInit();
-  });
+ 
   },
   components: {},
-
+//db.collection('users').doc(this.uid).collection('Bank').doc('question1').update(data);
   methods: {
     logout: function(){
       firebase.auth().signOut().then(() =>{

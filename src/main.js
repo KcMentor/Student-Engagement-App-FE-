@@ -21,17 +21,17 @@ const app = firebase.initializeApp(firebaseConfig)
 
 const db = app.firestore();
 
-async function createQuestionBank(db, collection, docs) {
-    await setDoc(doc(db, collection, docs.name), docs);
-}
+// async function createQuestionBank(db, collection, docs) {
+//     await setDoc(doc(db, collection, docs.name), docs);
+// }
 
-async function removeQuestion(db, collection, docs) {
-    await deleteDoc(doc(db, collection, docs.name))
-}
+// async function removeQuestion(db, collection, docs) {
+//     await deleteDoc(doc(db, collection, docs.name))
+// }
 
-async function removeQuestionBank(db, collection, docs) {
-    await deleteDoc(doc(db, collection, docs.name))
-}
+// async function removeQuestionBank(db, collection, docs) {
+//     await deleteDoc(doc(db, collection, docs.name))
+// }
 
 export default db;
 

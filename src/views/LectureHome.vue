@@ -62,7 +62,7 @@
 </template>
 
 <script>
-
+import M from 'materialize-css'
 import firebase from 'firebase'
 export default {
   data(){
@@ -83,9 +83,11 @@ export default {
     },
    },
     mounted(){
-      this.currentDateTime();
-
-    }
+       document.addEventListener('DOMContentLoaded', function() {
+      M.AutoInit();
+  });
+  this.currentDateTime();
+}
 
 };
 </script>
