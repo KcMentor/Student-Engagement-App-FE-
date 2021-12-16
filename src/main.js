@@ -20,6 +20,7 @@ const firebaseConfig = {
 
 const app = firebase.initializeApp(firebaseConfig)
 
+<<<<<<< HEAD
 const realTimeDb = getDatabase(app);
 const fireStoreDb = getFirestore();
 
@@ -36,5 +37,8 @@ async function removeQuestionBank(db, collection, docs) {
 }
 
 
+=======
+// const database = getDatabase(app);
+>>>>>>> cfa1a92ad29424a2e7ae1bac7d511d1e1606e6dc
 
 createApp(App).use(router).mount('#app')

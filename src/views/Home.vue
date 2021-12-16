@@ -47,7 +47,7 @@ export default {
 .option{
   border: 2px solid #350b49;
   border-radius: 25px;
-  margin:10px;
+  margin:10px 10px 10px 10px;
 }
 .btn:hover{
   background-color:#7b1fa2 ;
