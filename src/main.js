@@ -15,6 +15,7 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig)
 
+<<<<<<< HEAD
 var loginChecker;
 
 
@@ -35,3 +36,7 @@ firebase.auth().onAuthStateChanged((user) => {
       console.log("Not signed in")
     }
   });
+=======
+
+createApp(App).use(router).mount('#app')
+>>>>>>> 0ae73dc9d9cf2f40f49d448b9a2c680e5ad8aa75

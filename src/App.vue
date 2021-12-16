@@ -9,7 +9,11 @@
         <a href="" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li><router-link to="/analytics">Analytics</router-link></li>
+<<<<<<< HEAD
           <li v-if="!loggedIn"><router-link to="/login">Login</router-link></li>
+=======
+          <li v-if="!LoggedIn"><router-link to="/login">Login</router-link></li>
+>>>>>>> 0ae73dc9d9cf2f40f49d448b9a2c680e5ad8aa75
           <li v-else><a v-on:click="logout">Logout</a></li>
           <li><router-link to="/join">Join Session</router-link></li>
         </ul>
@@ -20,7 +24,11 @@
       <li>
         <router-link to="/lectureHome"><a>Lecture Home</a></router-link>
       </li>
+<<<<<<< HEAD
       <li v-if="!loggedIn"><router-link to="/login">Login</router-link></li>
+=======
+      <li v-if="!LoggedIn"><router-link to="/login">Login</router-link></li>
+>>>>>>> 0ae73dc9d9cf2f40f49d448b9a2c680e5ad8aa75
       <li v-else><a v-on:click="logout">Logout</a></li>
       <li><a href="/join">Join Class</a></li>
     </ul>
@@ -31,6 +39,7 @@
 <script>
 import image from "./assets/AppLogo.png"
 import firebase from 'firebase'
+import "firebase/auth";
 import router from './router';
 
 export default {
@@ -38,6 +47,7 @@ export default {
   data: function () {
     return {
       image: image,
+<<<<<<< HEAD
       loggedIn: false
   
     };
@@ -52,6 +62,40 @@ export default {
       }
     })
   }
+=======
+      LoggedIn : false
+    };
+  },
+  mounted(){
+    firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+      var uid = user.uid;
+      this.LoggedIn = true;
+      console.log("signed IN")
+      router.push({name: 'lectureHome', params: { id: '123'}})
+      // ...
+    } else {
+      // User is signed out
+      // ...
+      this.LoggedIn = false;
+      console.log("Not signed in")
+    }
+  });
+    
+  },
+  components: {},
+  methods: {
+    logout: function(){
+      firebase.auth().signOut().then(() =>{
+        router.push('Home')
+      }).catch((error) => {
+        console.log(error)
+      })
+    }
+  },
+>>>>>>> 0ae73dc9d9cf2f40f49d448b9a2c680e5ad8aa75
 };
 </script>
 
