@@ -1,19 +1,20 @@
 <template>
-  <div class="container">
-    <div class="col ">
-    <div class="row">
-      <p style="margin:1px 0px 0px 0px;">Date: {{date}}</p>
-      <p style="margin:1px 0px 0px 0px;">Time: {{time}}</p>
+  <div class="container" style="margin-left:0.5vw;margin-top:0.5vw">
+    
+    <div class="row" >
+      <div class="col s5 m3 l3 Date" style="background-color:#350b49;position:sticky;margin-top:3px;" >
+      <p class="center-align" style="margin:0;">Date: {{date}}</p>
+      <p class="center-align" style="margin:0;">Time: {{time}} (24hrs)</p>
     </div>
   </div>
   </div>
-  <div class="container center-align selection" style="background-color:#d1c4e9;width:65vw;height:50vh;">
+  <div class="container center-align selection" style="background-color:#d1c4e9;width:100vw;height:26vh;">
    <div class="row option" >
     <div class="col s12 center align" >
-   <p style="font-size:5vw;margin:0px;color:#350b49">Lecturers</p>
+   <p style="font-size:5vw;margin:0px;color:#350b49">Session Wizard</p>
    <i class="material-icons" style="font-size:15vw;">school</i>
    <div class="input-field">
-            <router-link to="/login"><a class="btn waves-effect waves-purple my-color-back" style="width:20vw">Start Session</a></router-link>
+            <router-link to="/login"><a class="btn waves-effect waves-purple my-color-back" style="width:20vw;margin-bottom:1vh;">Start Session</a></router-link>
    </div>
    </div>
    </div>
@@ -83,13 +84,18 @@ export default {
    },
     mounted(){
       this.currentDateTime();
+
     }
 
 };
 </script>
 
 <style>
-
+.Date{
+  border: 1px solid #350b49 ;
+  border-radius: 5px;
+  margin:0px;
+}
 
 </style>
 

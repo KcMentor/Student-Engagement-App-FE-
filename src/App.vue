@@ -25,14 +25,17 @@
 
     <ul class="sidenav" id="mobile-demo">
       <li v-if="LoggedIn">
-        <router-link to="/lectureHome"><a>Home</a></router-link>
+        <router-link to="/lectureHome">Home</router-link>
+      </li>
+      <li v-else>
+        <router-link to="/">Home</router-link>
       </li>
       <li v-if="LoggedIn"><router-link to="/lecturerActivity">Lecturer Activity</router-link></li>
       <li v-if="!LoggedIn"><router-link to="/login">Login</router-link></li>
       
       <li v-else><a v-on:click="logout">Logout</a></li>
       
-      <li v-if="!LoggedIn"><a href="/join">Join Session</a></li>
+      <li v-if="!LoggedIn"><router-link to="/join">Join Session</router-link></li>
     </ul>
   </div>
   <router-view />

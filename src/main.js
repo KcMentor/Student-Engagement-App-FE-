@@ -17,6 +17,6 @@ const firebaseConfig = {
 
 const app = firebase.initializeApp(firebaseConfig)
 
-const database = getDatabase(app);
+// const database = getDatabase(app);
 
 createApp(App).use(router).mount('#app')
