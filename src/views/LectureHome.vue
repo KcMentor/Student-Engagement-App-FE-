@@ -48,7 +48,7 @@
    
   </div>
 
-   <div class=" card-panel my-color-card wrapper1">
+      <div class=" card-panel my-color-card wrapper1">
         <table class="highlight centered responsive-table">
             <thead>
             <tr>
@@ -63,7 +63,8 @@
             </tbody>
         </table>
     </div>
-    <div class=" card-panel my-color-card wrapper2 ">
+   
+      <div class=" card-panel my-color-card wrapper2 ">
         <table class="highlight centered responsive-table">
             <thead>
             <tr>
@@ -78,6 +79,9 @@
             </tbody>
         </table>
     </div>
+    
+
+    
 </template>
 
 <script>
@@ -111,6 +115,7 @@ export default {
     width: fit-content;
     display: flex;
     flex-direction: column;
+    row-gap: 10px;
     bottom: 20px;
     top: 20px;
     left: 800px;
@@ -119,12 +124,25 @@ export default {
   .wrapper1{
     border-radius: 12px;
     color:  #4E2D68;
+    width: 450px;
+    position: absolute;
+    right: 30px;
+    top: 650px;
+    height: 250px;
   }
 
   .wrapper2{
     border-radius: 12px;
     color:  #4E2D68;
+    position: relative;
+    right: 30px;
+    top: 650px;
+    width: 450px;
   }
 
-
+  
+  table{
+    position: relative;
+    left: auto;
+  }
 </style>
