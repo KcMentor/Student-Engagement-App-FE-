@@ -2,8 +2,8 @@
 
 <template>
    
-     <div class=" card-panel my-color-card wrapper">
-        <table class="highlight centered responsive-table">
+     <div class=" card-panel my-color-card Sessions-wrapper">
+        <table class=" analytics-table highlight centered responsive-table">
             <thead>
             <tr>
                 <th>Sessions</th>
@@ -24,7 +24,7 @@
         </table>
     </div>
 
-    <div class=" card-panel my-color-card wrapper2">
+    <div class=" card-panel my-color-card Students-wrapper">
         <table class="highlight centered responsive-table">
             <thead>
             <tr>
@@ -58,8 +58,8 @@
 <style>
 
 
-.wrapper2{
-    width: fit-content;
+.Students-wrapper{
+    width: 350px;
     height: 250px;
     border: 1px solid #c3c3c3;
     position: absolute;
@@ -69,8 +69,8 @@
     border-radius: 12px;
 }
 
-.wrapper{
-    width: fit-content;
+.Sessions-wrapper{
+    width: 350px;
     height: 250px;
     border: 1px solid #c3c3c3;
     position: absolute;
@@ -81,7 +81,7 @@
 }
 
 
-table{
+.analytics-table{
     position: relative;
     left: auto;
 }
