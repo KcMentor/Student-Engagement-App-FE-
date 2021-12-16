@@ -5,8 +5,8 @@
         <div class="row" >
           <div class="col s12 center-align">
           <h2 style="color:#4e2d68;font-size:5vw;">Join A Session</h2>
-          <p style="font-size:3vw;">If You are a lecturer please <router-link to="/login">Click Here</router-link> to Login</p>
-          <p v-if="Invalid" style="font-size:2vw">Invalid Session Code</p>
+          <p style="font-size:2vw;">If You are a lecturer please <router-link to="/login">Click Here</router-link> to Login</p>
+          <p v-if="Invalid" style="font-size:2vw;color:red;">Invalid Session Code</p>
           </div>
         </div>
         <div class="row">
