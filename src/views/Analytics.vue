@@ -1,9 +1,7 @@
-
-
 <template>
-   
-     <div class=" card-panel my-color-card Sessions-wrapper">
-        <table class=" analytics-table highlight centered responsive-table">
+    
+    <div class=" card-panel my-color-card wrapper item-1">
+        <table class="highlight">
             <thead>
             <tr>
                 <th>Sessions</th>
@@ -57,10 +55,9 @@
 
 <style>
 
-
-.Students-wrapper{
-    width: 350px;
-    height: 250px;
+.item-1{
+    width: 700px;
+    height: 300px;
     border: 1px solid #c3c3c3;
     position: absolute;
     bottom: 0px; 

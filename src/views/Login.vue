@@ -25,7 +25,7 @@
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <a href="#" class="btn waves-effect waves-purple col s4 offset-s4 my-color-back">Login</a>
+            <button id="loginButton" v-on:click="login" class="btn waves-effect waves-purple col s4 offset-s4 my-color-back">Login</button>
           </div>
         </div>
 
@@ -36,8 +36,26 @@
 </template>
 
 <script>
-export default {
+import firebase from "firebase"
 
+export default {
+  name: "Login",
+  components: {},
+  methods: {
+    login: function(){
+      var userEmail = document.getElementById("email").value;
+      var userPass = document.getElementById("password").value;
+
+      firebase.auth().signInWithEmailAndPassword(userEmail, userPass).then((userCredential) => {
+        //Signed in
+        var user = userCredential.user;
+      }).catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorMessage)
+      })
+    }
+  }
 }
 </script>
 

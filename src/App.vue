@@ -6,16 +6,11 @@
           ><a class="brand-logo"
             ><img :src="image" width="154" height="55" margin-left="0px" /></a
         ></router-link>
-        <a href="" data-target="mobile-demo" class="sidenav-trigger"
-          ><i class="material-icons">menu</i></a
-        >
+        <a href="" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li>
-            <router-link to="/lectureHome">Lecture Home</router-link>
-          </li>
           <li><router-link to="/analytics">Analytics</router-link></li>
-          <li><router-link to="/lectureSession">Lecture Session</router-link></li>
-          <li><router-link to="/login">Login</router-link></li>
+          <li v-if="!user"><router-link to="/login">Login</router-link></li>
+          <li v-else><a v-on:click="logout">Logout</a></li>
           <li><router-link to="/join">Join Session</router-link></li>
         </ul>
       </div>
@@ -25,7 +20,8 @@
       <li>
         <router-link to="/lectureHome"><a>Lecture Home</a></router-link>
       </li>
-      <li><router-link to="/login"><a>Login</a></router-link></li>
+      <li v-if="!loginChecker"><router-link to="/login">Login</router-link></li>
+      <li v-else><a v-on:click="logout">Logout</a></li>
       <li><a href="/join">Join Class</a></li>
     </ul>
   </div>
@@ -35,6 +31,8 @@
 <script>
 import image from "./assets/AppLogo.png"
 import M from 'materialize-css'
+import firebase from 'firebase'
+import router from './router';
 
 export default {
   name: "Home",
@@ -45,6 +43,15 @@ export default {
   },
   components: {},
 
+  methods: {
+    logout: function(){
+      firebase.auth().signOut().then(() =>{
+        router.push('Home')
+      }).catch((error) => {
+        console.log(error)
+      })
+    }
+  },
 };
 </script>
 
