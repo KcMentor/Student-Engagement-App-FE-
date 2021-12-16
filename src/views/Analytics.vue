@@ -1,6 +1,6 @@
 <template>
 
-    <div class=" card-panel my-color-card wrapper">
+    <div class=" card-panel my-color-card wrapper item-1">
         <table class="highlight">
             <thead>
             <tr>
@@ -43,7 +43,7 @@ export default {
 
 <style>
 
-.wrapper{
+.item-1{
     width: 700px;
     height: 300px;
     border: 1px solid #c3c3c3;
