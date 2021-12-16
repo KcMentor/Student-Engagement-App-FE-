@@ -6,13 +6,8 @@
           ><a class="brand-logo"
             ><img :src="image" width="154" height="55" margin-left="0px" /></a
         ></router-link>
-        <a href="" data-target="mobile-demo" class="sidenav-trigger"
-          ><i class="material-icons">menu</i></a
-        >
+        <a href="" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li>
-            <router-link to="/lectureHome">Lecture Home</router-link>
-          </li>
           <li><router-link to="/analytics">Analytics</router-link></li>
           <li><router-link to="/login">Login</router-link></li>
           <li><router-link to="/join">Join Session</router-link></li>
@@ -21,9 +16,6 @@
     </nav>
 
     <ul class="sidenav" id="mobile-demo">
-      <li>
-        <router-link to="/lectureHome"><a>Lecture Home</a></router-link>
-      </li>
       <li><router-link to="/login"><a>Login</a></router-link></li>
       <li><a href="/join">Join Class</a></li>
     </ul>
