@@ -67,29 +67,22 @@ export default {
       this.LoggedIn = true;
       console.log("signed IN")
       router.push({name: 'lectureHome', params: {uid}})
-      const userRef = db.collection('users').doc(uid);
-      console.log(userRef)
       const data={
-        fruit2: 'Watermelon',
-        stats2 : [7, 10, 'ahds']
       }
-      if(!userRef.exists){
-        const res = db.collection('users').doc(uid).set(data);
+      try{
+        const res = db.collection('users').doc(uid).collection('Bank').doc('question1').update(data);
+      }catch(error){
         console.log("Doesnt Exist")
-        console.log(res)
-      } else {
-        const res = db.collection('users').doc(uid).update(data);
-        console.log("exists")
-        console.log(res)
-      }
-
-      // ...
+      }  // ...
     } else {
       // User is signed out
       // ...
       this.LoggedIn = false;
       console.log("Not signed in")
     }
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+      M.AutoInit();
   });
   },
   components: {},
