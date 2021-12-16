@@ -14,7 +14,7 @@
    <p style="font-size:5vw;margin:0px;color:#350b49">Session Wizard</p>
    <i class="material-icons" style="font-size:15vw;">school</i>
    <div class="input-field">
-            <router-link to="/login"><a class="btn waves-effect waves-purple my-color-back" style="width:20vw;margin-bottom:1vh;">Start Session</a></router-link>
+            <router-link to="/login"><a class="btn waves-effect waves-purple my-color-back" style="width:20vw;margin-bottom:0vh;">Start Session</a></router-link>
    </div>
    </div>
    </div>
