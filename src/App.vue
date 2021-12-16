@@ -2,7 +2,11 @@
   <div id="homepage">
     <nav>
       <div class="nav-wrapper">
-        <router-link to="/"
+        <router-link v-if="!LoggedIn" to="/"
+          ><a class="brand-logo"
+            ><img :src="image" width="154" height="55" margin-left="0px" /></a
+        ></router-link>
+        <router-link v-if="LoggedIn" to="/lectureHome"
           ><a class="brand-logo"
             ><img :src="image" width="154" height="55" margin-left="0px" /></a
         ></router-link>
@@ -14,7 +18,7 @@
           <li v-else><a v-on:click="logout">Logout</a></li>
 
           <li v-if="LoggedIn"><router-link to="/lecturerActivity">Lecturer Activity</router-link></li>
-          <li><router-link to="/join">Join Session</router-link></li>
+          <li v-if="!LoggedIn"><router-link to="/join">Join Session</router-link></li>
         </ul>
       </div>
     </nav>
