@@ -8,18 +8,19 @@
           </a>
           <div id="modal1" class="modal">
             <div class="modal-content">
-              <h4>Modal Header</h4>
-              <p>A bunch of text</p>
+              <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <textarea id="question-bank-name" class="materialize-textarea"></textarea>
+                      <label for="question-bank-name">Enter question bank name</label>
+                    </div>
+                  </div>
+                </form>
+              </div>
             </div>
             <div class="modal-footer">
-              <a
-                class="
-                  modal-action modal-close
-                  waves-effect waves-green
-                  btn-flat
-                "
-                >Agree</a
-              >
+              <a class="modal-action modal-close waves-effect waves-green btn-flat">ADD</a>
             </div>
           </div>
 
@@ -35,6 +36,7 @@
 <script>
 import $ from "jquery";
 import M from "materialize-css";
+import firebase from 'firebase'
 
 // class="modal-trigger" data-target="modal1"
 
@@ -43,11 +45,11 @@ export default {
   components: {},
   methods: {
     showMode: function () {
-        
+
     },
   },
-  mounted(){
-    document.getElementById("modalkey").addEventListener('click', function(){
+  mounted() {
+    document.getElementById("modalkey").addEventListener('click', function () {
       var elems = document.querySelectorAll('.modal');
       var instances = M.Modal.init(elems);
     })
@@ -64,5 +66,9 @@ export default {
 }
 .card-content {
   text-align: center !important;
+}
+.card {
+  margin: 5vh;
+  border-radius: 12px;
 }
 </style>
