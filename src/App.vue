@@ -34,6 +34,7 @@
 
 <script>
 import image from "./assets/AppLogo.png"
+import M from 'materialize-css'
 
 export default {
   name: "Home",
@@ -43,6 +44,7 @@ export default {
     };
   },
   components: {},
+
 };
 </script>
 
