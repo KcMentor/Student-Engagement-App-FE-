@@ -28,18 +28,32 @@
       </div>
         <div class="row">
           <div class="input-field col s12">
-            <a href="#" class="btn waves-effect waves-purple col s12  my-color-back">Join Session</a>
+             <a class="btn waves-effect waves-purple col s12  my-color-back">
+              <router-link :to="'/session/' + this.code ">Join Session</router-link>
+            </a>
           </div>
         </div>
-
-
       </form>
     </div>
   </div>
 </template>
 
 <script>
+import $ from "jquery";
+import M from "materialize-css";
+import firebase from 'firebase';
+import "firebase/auth";
+import db from '../main.js'
 export default {
+  data: function () {
+    return{
+      code: null
+    }
+  },
+  mounted(){
+      this.code = document.getElementById("sesssionCode").value
+      console.log(this.code)
+  }
 
 }
 </script>

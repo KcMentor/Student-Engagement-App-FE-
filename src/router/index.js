@@ -53,10 +53,10 @@ const routes = [
     component: Login
   },
   {
-    path: "/session",
+    path: "/session/:sessionCode",
     name: "session",
     component: Session,
-    meta:{requiresAuth: true }
+    
   
   },
   {
