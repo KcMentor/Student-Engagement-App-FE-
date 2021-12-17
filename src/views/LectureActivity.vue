@@ -36,7 +36,7 @@
    <div >
      <ul class="collection with-header">
        <li class="collection-header" style="color:#4e2d68"><h4>Your Question Banks</h4></li>
-       <li class="collection-item" style="color:#4e2d68" v-for="(i, index) in questions" :key="i"><div>{{index}}{{i}}<a class="secondary-content"><router-link :to="'/addQuestion/' + index"><i class="material-icons">send</i></router-link></a></div></li>
+       <li class="collection-item" style="color:#4e2d68" v-for="(i, index) in questions" :key="i"><div>{{i}}<a class="secondary-content"><router-link :to="'/addQuestion/' + index"><i class="material-icons">send</i></router-link></a></div></li>
      </ul>
        
    </div>
@@ -94,13 +94,10 @@ export default {
       snapshot.forEach(doc => {
         // refer.push(doc.id)
         this.questions.push(doc.id)
-        console.log(doc.id)
       }) 
     })
     // this.questions = refer;
     }
-    console.log(this.questions)
-    
     this.isLoaded = true;
   },
   

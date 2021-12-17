@@ -14,8 +14,8 @@
                   <div class="row">
                     <p class="col s6 offset-s3">New Question</p>  
                     <div class="input-field col s12">
-                      <textarea id="question-name" class="materialize-textarea"></textarea>
-                      <label for="questionname">Enter Question Text</label>
+                      <textarea id="question-text" class="materialize-textarea"></textarea>
+                      <label for="question-text">Enter Question Text</label>
                     </div>
                     <div class="input-field col s12">
                       <textarea id="Answer-1" class="materialize-textarea"></textarea>
@@ -63,7 +63,7 @@
             <div class="modal-footer" style="margin-bottom:4vh;">
               <a
                 class="modal-action modal-close waves-effect waves-green btn-flat"
-                @click="addQuestionBank()"
+                @click="addQuestion()"
               >ADD</a>
             </div>
           </div>
@@ -71,8 +71,20 @@
       </div>
     </div>
   </div>
-<h1>Hello</h1>
-  <h1>{{this.$route.params.id}}</h1>
+    <div v-if="isLoaded">
+   <div >
+     <ul class="collection with-header">
+       <li class="collection-header" style="color:#4e2d68"><h4>{{this.banks[this.$route.params.id]}}</h4></li>
+       <li class="collection-item" style="color:#4e2d68" v-for="i in questions" :key="i.text">{{i.text}}</li>
+     </ul>
+       
+   </div>
+</div>
+
+<div v-else>
+    Loading...
+</div>
+
 </template>
 
 <script>
@@ -81,8 +93,64 @@ import M from "materialize-css";
 import firebase from 'firebase';
 import "firebase/auth";
 import db from '../main.js'
+import router from '../router';
 
 export default {
+    data() {
+    return {
+      myUID: null,
+      questions: [],
+      banks:[],
+      question: null,
+      isLoaded: false,
+    }
+  },
+    methods:{
+     addQuestion: function () {
+      var answerNum ;   
+      var bankName = this.banks[this.$route.params.id];
+      var qText = document.getElementById("question-text").value;
+      var ans1 = document.getElementById("Answer-1").value;
+      var ans2 = document.getElementById("Answer-2").value;
+      var ans3 = document.getElementById("Answer-3").value;
+      var ans4 = document.getElementById("Answer-4").value;
+      var checkbox1 = document.getElementById("choice-1").checked;
+      var checkbox2 = document.getElementById("choice-2").checked;
+      var checkbox3 = document.getElementById("choice-3").checked;
+      var checkbox4 = document.getElementById("choice-4").checked;
+      if (checkbox1){
+          answerNum = 1;  
+      }else if(checkbox2){
+          answerNum = 2
+      }else if(checkbox3){
+          answerNum = 3
+      }else{
+          answerNum = 4
+      }
+      var id = "id" + Math.random().toString(16).slice(2)
+
+      console.log(this.myUID);
+      const data = {
+          text: qText,
+          an1: ans1,
+          an2: ans2,
+          an3: ans3,
+          an4: ans4,
+          cAns: answerNum 
+      }
+      db.collection('users').doc(this.myUID).collection('Bank').doc(bankName).collection('Questions').doc(qText).set(data)
+      
+      this.$router.push({
+          name: "addQuestion",
+          params: {
+              id: this.$route.params.id
+          }
+      })
+    },
+    
+    
+    
+    },
     
     mounted(){
     document.getElementById("modalkey").addEventListener('click', function () {
@@ -93,6 +161,28 @@ export default {
       var uid = user.uid;
       this.myUID = uid;
     })
+ if(firebase.auth().currentUser){
+      const data = db.collection('users').doc(firebase.auth().currentUser.uid).collection('Bank').get().then((snapshot) => {
+      snapshot.forEach(doc => {
+        // refer.push(doc.id)
+        this.banks.push(doc.id)
+      }) 
+    })
+    // this.questions = refer;
+    }
+
+    if(firebase.auth().currentUser){
+      const data = db.collection('users').doc(firebase.auth().currentUser.uid).collection('Bank').doc(this.banks[this.$route.params.id]).collection('Questions').get().then((snapshot) => {
+      snapshot.forEach(doc => {
+        // refer.push(doc.id)
+        this.questions.push(doc.id)
+        console.log(doc.id)
+      }) 
+    })
+    // this.questions = refer;
+    }
+    this.isLoaded = true;
+    
     }
 
 }
