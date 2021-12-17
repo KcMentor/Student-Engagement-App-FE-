@@ -41,7 +41,6 @@ import M from "materialize-css";
 import firebase from 'firebase';
 import "firebase/auth";
 import db from '../main.js'
-
 // class="modal-trigger" data-target="modal1"
 
 export default {
@@ -49,7 +48,8 @@ export default {
   components: {},
   data() {
     return {
-      myUID: null
+      myUID: null,
+      questionBanks: []
     }
   },
   methods: {
