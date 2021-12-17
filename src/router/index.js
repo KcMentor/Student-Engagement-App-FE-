@@ -29,13 +29,15 @@ const routes = [
   {
     path: "/lecturerActivity",
     name: "lecturerAcitivity",
-    component: lecturerActivity
+    component: lecturerActivity,
+    meta:{requiresAuth: true }
   },
 
   {
     path: "/analytics",
     name: "analytics",
-    component: Analytics
+    component: Analytics,
+    meta:{requiresAuth: true }
   }, 
 
   {
@@ -46,7 +48,9 @@ const routes = [
   {
     path: "/lectureSession",
     name: "lectrueSession",
-    component: LectureSession
+    component: LectureSession,
+    meta:{requiresAuth: true }
+  
   },
   {
     path: "/join",
