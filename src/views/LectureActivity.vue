@@ -46,7 +46,7 @@
         </li>
         <li class="collection-item" style="color:#4e2d68" v-for="(i, index) in questions" :key="i">
           <div>
-            {{ index }}{{ i }}
+            {{ i }}
             <a class="secondary-content">
               <router-link :to="'/addQuestion/' + index">
                 <i class="material-icons">send</i>
@@ -106,7 +106,6 @@ export default {
         snapshot.forEach(doc => {
           // refer.push(doc.id)
           this.questions.push(doc.id)
-          console.log(doc.id)
         })
       })
       // this.questions = refer;
