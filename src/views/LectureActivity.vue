@@ -31,6 +31,7 @@
       </div>
     </div>
   </div>
+  <p v-for="question in questions" :key="question">{{question}}</p>
 </template>
 
 
@@ -49,7 +50,8 @@ export default {
   data() {
     return {
       myUID: null,
-      questionBanks: []
+      questions: [],
+      question: null
     }
   },
   methods: {
@@ -94,7 +96,7 @@ export default {
   text-align: center !important;
 }
 .card {
-  margin: 5vh;
+  margin: 1vh 1vw;
   border-radius: 12px;
 }
 </style>
