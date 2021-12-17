@@ -7,6 +7,7 @@ import Login from '../views/Login'
 import Join from '../views/JoinSession'
 import Analytics from '../views/Analytics'
 import Session from '../views/Session'
+import addQuest from '../views/AddQuestion'
 import firebase from "firebase"
 
 const routes = [
@@ -19,6 +20,12 @@ const routes = [
     path: "/lectureHome",
     name: "lectureHome",
     component: LectureHome,
+    meta:{requiresAuth: true }
+  },
+  {
+    path: "/addQuestion/:id",
+    name: "addQuestion",
+    component: addQuest ,
     meta:{requiresAuth: true }
   },
   {
