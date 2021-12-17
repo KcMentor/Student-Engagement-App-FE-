@@ -20,8 +20,10 @@
               </div>
             </div>
             <div class="modal-footer">
-              <a class="modal-action modal-close waves-effect waves-green btn-flat" @click="questionBankName()">ADD</a>
-      
+              <a
+                class="modal-action modal-close waves-effect waves-green btn-flat"
+                @click="addQuestionBank()"
+              >ADD</a>
             </div>
           </div>
           <h4>Create Question Bank</h4>
@@ -37,6 +39,7 @@
 import $ from "jquery";
 import M from "materialize-css";
 import firebase from 'firebase';
+import "firebase/auth";
 import db from '../main.js'
 
 // class="modal-trigger" data-target="modal1"
@@ -45,20 +48,28 @@ export default {
   name: "lecturerAcitivity",
   components: {},
   data() {
-    return {  
+    return {
+      myUID: null
     }
   },
   methods: {
-    questionBankName: function () {
+    addQuestionBank: function () {
       var bankName = document.getElementById("question-bank-name").value;
-      console.log(bankName);
-      
+      console.log(this.myUID);
+      const data = {
+      }
+      db.collection('users').doc(this.myUID).collection('Bank').doc(bankName).set(data)
     },
+
   },
   mounted() {
     document.getElementById("modalkey").addEventListener('click', function () {
       var elems = document.querySelectorAll('.modal');
       var instances = M.Modal.init(elems);
+    })
+    firebase.auth().onAuthStateChanged((user) => {
+      var uid = user.uid;
+      this.myUID = uid;
     })
   },
 };
