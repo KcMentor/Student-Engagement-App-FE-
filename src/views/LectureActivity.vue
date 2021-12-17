@@ -34,8 +34,9 @@
 
   <div v-if="isLoaded">
    <div >
-     <ul>
-       <li v-for="i in questions" :key="i">{{i}}</li>
+     <ul class="collection with-header">
+       <li class="collection-header" style="color:#4e2d68"><h4>Your Question Banks</h4></li>
+       <li class="collection-item" style="color:#4e2d68" v-for="i in questions" :key="i">{{i}}</li>
      </ul>
        
    </div>
