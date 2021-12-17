@@ -19,7 +19,7 @@
           <a
             class="btn waves-effect waves-purple my-color-back modal-trigger"
             style="width:20vw;margin-bottom:0vh;"
-            data-target="modall"
+            data-target="modal1"
             id="modalkey"
             href="#modal1"
           >Start Session</a>
