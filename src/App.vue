@@ -16,24 +16,27 @@
           <i class="material-icons">menu</i>
         </a>
         <ul class="right hide-on-med-and-down">
-          <li>
+          <li v-if="!LoggedIn">
+            <router-link to="/lectureHome">Home</router-link>
+          </li>
+          <li v-if="LoggedIn">
+            <router-link to="/lectureHome">Home</router-link>
+          </li>
+           <li v-if="LoggedIn">
+            <router-link to="/lecturerActivity">Lecturer Activity</router-link>
+          </li>
+           <li v-if="LoggedIn">
             <router-link to="/analytics">Analytics</router-link>
           </li>
           <li v-if="!LoggedIn">
+            <router-link to="/join">Join Session</router-link>
+          </li>
+            <li v-if="!LoggedIn">
             <router-link to="/login">Login</router-link>
           </li>
 
           <li v-else>
             <a v-on:click="logout">Logout</a>
-          </li>
-          <li v-if="LoggedIn">
-            <router-link to="/lectureHome">Home</router-link>
-          </li>
-          <li v-if="LoggedIn">
-            <router-link to="/lecturerActivity">Lecturer Activity</router-link>
-          </li>
-          <li v-if="!LoggedIn">
-            <router-link to="/join">Join Session</router-link>
           </li>
         </ul>
       </div>
