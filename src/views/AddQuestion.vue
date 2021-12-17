@@ -75,7 +75,7 @@
    <div >
      <ul class="collection with-header">
        <li class="collection-header" style="color:#4e2d68"><h4>{{this.banks[this.$route.params.id]}}</h4></li>
-       <li class="collection-item" style="color:#4e2d68" v-for="i in questions" :key="i.text">{{i.text}}</li>
+       <li class="collection-item" style="color:#4e2d68" v-for="i in questions" :key="i">{{i}}</li>
      </ul>
        
    </div>
@@ -171,10 +171,9 @@ export default {
     
     // this.questions = refer;
     }
-    },
-    created(){
-        if(firebase.auth().currentUser){
-      const data = db.collection('users').doc(firebase.auth().currentUser.uid).collection('Bank').doc(this.banks[this.$route.params.id]).collection('Questions').get().then((snapshot) => {
+
+if(firebase.auth().currentUser){
+      const data = db.collection('users').doc(firebase.auth().currentUser.uid).collection('Bank').doc('Data Structures').collection('Questions').get().then((snapshot) => {
       snapshot.forEach(doc => {
         // refer.push(doc.id)
         this.questions.push(doc.id)
@@ -184,7 +183,9 @@ export default {
     this.isLoaded = true;
     }
     
-    console.log(this.questions)
+    },
+    created(){
+        
     }
 
 }
