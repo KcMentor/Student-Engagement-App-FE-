@@ -31,6 +31,7 @@
       </div>
     </div>
   </div>
+  <p v-for="question in questions" :key="question">{{question}}</p>
 </template>
 
 
@@ -49,7 +50,8 @@ export default {
   data() {
     return {
       myUID: null,
-      questionBanks: []
+      questions: [],
+      question: null
     }
   },
   methods: {
@@ -70,16 +72,18 @@ export default {
     firebase.auth().onAuthStateChanged((user) => {
       var uid = user.uid;
       this.myUID = uid;
-    })
-
+    }) 
+  },
+  created() {
+    var random = []
     const data = db.collection('users').doc(firebase.auth().currentUser.uid).collection('Bank').get().then(function(snapshot){
       snapshot.forEach(doc => {
+        random.push(doc.id)
         console.log(doc.id)
       })
     })
-    
-    
-  },
+    this.questions = random
+  }
 };
 </script>
 
@@ -94,7 +98,7 @@ export default {
   text-align: center !important;
 }
 .card {
-  margin: 5vh;
+  margin: 1vh 1vw;
   border-radius: 12px;
 }
 </style>
