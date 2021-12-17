@@ -30,19 +30,22 @@
    <div >
      <ul class="collection with-header" >
        <li class="collection-header" style="color:#4e2d68"><h4>Select Question Bank to Start Session</h4></li>
-       <li class="collection-item" style="color:#4e2d68" v-for="(i, index) in questionBank" :key="i">{{index}}|{{i}}</li>
+       <li class="collection-item" style="color:#4e2d68" v-for="(i, index) in questionBank" :key="i">
+        <label>
+        <input name=i type="radio" checked/>
+        <span>{{index}}. {{i}}</span>
+      </label>
+       </li>
      </ul>
-       
    </div>
 </div>
 
 <div v-else>
     Loading...
 </div>
-
           </div>
           <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+            <router-link to="/session">Save & Start Session</router-link>
           </div>
         </div>
       </div>
