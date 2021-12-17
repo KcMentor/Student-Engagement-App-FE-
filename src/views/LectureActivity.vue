@@ -31,7 +31,21 @@
       </div>
     </div>
   </div>
-  <p v-for="question in questions" :key="question">{{question}}</p>
+
+  <div v-if="isLoaded">
+   <div >
+     <ul>
+       <li v-for="i in questions" :key="i">{{i}}</li>
+     </ul>
+       
+   </div>
+</div>
+
+<div v-else>
+    Loading...
+</div>
+
+  
 </template>
 
 
@@ -51,7 +65,8 @@ export default {
     return {
       myUID: null,
       questions: [],
-      question: null
+      question: null,
+      isLoaded: false
     }
   },
   methods: {
@@ -62,9 +77,8 @@ export default {
       }
       db.collection('users').doc(this.myUID).collection('Bank').doc(bankName).set(data)
     },
-
   },
-  mounted() {
+   mounted() {
     document.getElementById("modalkey").addEventListener('click', function () {
       var elems = document.querySelectorAll('.modal');
       var instances = M.Modal.init(elems);
@@ -73,15 +87,22 @@ export default {
       var uid = user.uid;
       this.myUID = uid;
     })
-
-    if(firebase.auth().currentUser){
-      const data = db.collection('users').doc(firebase.auth().currentUser.uid).collection('Bank').get().then(function(snapshot){
+    // var refer = []
+      if(firebase.auth().currentUser){
+      const data = db.collection('users').doc(firebase.auth().currentUser.uid).collection('Bank').get().then((snapshot) => {
       snapshot.forEach(doc => {
+        // refer.push(doc.id)
+        this.questions.push(doc.id)
         console.log(doc.id)
-      })
+      }) 
     })
+    // this.questions = refer;
     }
+    console.log(this.questions)
+    
+    this.isLoaded = true;
   },
+  
 };
 </script>
 
