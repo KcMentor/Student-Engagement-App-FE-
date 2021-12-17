@@ -72,13 +72,13 @@ export default {
       this.myUID = uid;
     })
 
-    const data = db.collection('users').doc(firebase.auth().currentUser.uid).collection('Bank').get().then(function(snapshot){
+    if(firebase.auth().currentUser){
+      const data = db.collection('users').doc(firebase.auth().currentUser.uid).collection('Bank').get().then(function(snapshot){
       snapshot.forEach(doc => {
         console.log(doc.id)
       })
     })
-    
-    
+    }
   },
 };
 </script>
