@@ -1,10 +1,11 @@
 <template>
-  <div class="row">
-    <div class="col s12 m4">
-      <div class="card my-color-card">
-        <div class="card-content my-color">
-          <a class="modal-trigger" data-target="modal1" id="modalkey" href="#modal1">
-            <i class="large material-icons my-color">add_circle_outline</i>
+  <div class="row" >
+    <div class="col s12" >
+      <div class="card my-color-card" style="height:8vh;">
+        <div class="card-content col s12" >
+          <a class="modal-trigger" data-target="modal1" id="modalkey" href="#modal1" >
+            <i class="small material-icons my-color" style="display:inline-block;vertical-align:top;margin-top:0px">add_circle_outline</i>
+            <h5 class="my-color" style="display:inline-block;padding-left:2vw;margin-top:0px">Create Question Bank</h5>
           </a>
           <div id="modal1" class="modal">
             <div class="modal-content">
@@ -26,7 +27,6 @@
               >ADD</a>
             </div>
           </div>
-          <h4>Create Question Bank</h4>
         </div>
       </div>
     </div>
@@ -36,7 +36,7 @@
    <div >
      <ul class="collection with-header">
        <li class="collection-header" style="color:#4e2d68"><h4>Your Question Banks</h4></li>
-       <li class="collection-item" style="color:#4e2d68" v-for="i in questions" :key="i">{{i}}</li>
+       <li class="collection-item" style="color:#4e2d68" v-for="(i, index) in questions" :key="i">{{index}}|{{i}}</li>
      </ul>
        
    </div>
@@ -67,7 +67,7 @@ export default {
       myUID: null,
       questions: [],
       question: null,
-      isLoaded: false
+      isLoaded: false,
     }
   },
   methods: {
@@ -115,7 +115,7 @@ export default {
   background-color: #ede7f0;
 }
 .card-content {
-  text-align: center !important;
+  text-align:center;
 }
 .card {
   margin: 1vh 1vw;
