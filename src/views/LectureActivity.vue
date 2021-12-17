@@ -110,7 +110,7 @@ export default {
       })
       // this.questions = refer;
     }
-    console.log(this.questions)
+    // console.log(this.questions)
 
     this.isLoaded = true;
   },
