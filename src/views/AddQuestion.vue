@@ -168,10 +168,12 @@ export default {
         this.banks.push(doc.id)
       }) 
     })
+    
     // this.questions = refer;
     }
-
-    if(firebase.auth().currentUser){
+    },
+    created(){
+        if(firebase.auth().currentUser){
       const data = db.collection('users').doc(firebase.auth().currentUser.uid).collection('Bank').doc(this.banks[this.$route.params.id]).collection('Questions').get().then((snapshot) => {
       snapshot.forEach(doc => {
         // refer.push(doc.id)
@@ -179,10 +181,10 @@ export default {
         console.log(doc.id)
       }) 
     })
-    // this.questions = refer;
-    }
     this.isLoaded = true;
+    }
     
+    console.log(this.questions)
     }
 
 }
