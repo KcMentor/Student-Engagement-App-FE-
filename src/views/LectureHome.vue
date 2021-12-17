@@ -30,12 +30,16 @@
    <div >
      <ul class="collection with-header" >
        <li class="collection-header" style="color:#4e2d68"><h4>Select Question Bank to Start Session</h4></li>
-       <li class="collection-item" style="color:#4e2d68" v-for="(i, index) in questionBank" :key="i">
-        <label>
-        <input name=i type="radio" checked/>
-        <span>{{index}}. {{i}}</span>
-      </label>
-       </li>
+        <li class="collection-item" style="color:#4e2d68" v-for="(i, index) in questionBank" :key="i">
+          <div>
+            {{ index }}. {{ i }}
+            <a class="secondary-content">
+              <router-link :to="'/session/' + index">
+                <i class="material-icons">send</i>
+              </router-link>
+            </a>
+          </div>
+        </li>
      </ul>
    </div>
 </div>
@@ -45,7 +49,9 @@
 </div>
           </div>
           <div class="modal-footer">
-            <router-link to="/session">Save & Start Session</router-link>
+        <router-link :to="'/session/' + index">Save & Start Session
+             </router-link>
+            
           </div>
         </div>
       </div>
@@ -95,7 +101,9 @@ export default {
       date: null,
       time: null,
       questionBank: [],
-      isLoaded : false
+      isLoaded : false,
+      sessionCode: ''
+      
     }
   },
   methods: {
@@ -107,6 +115,10 @@ export default {
       this.time = time;
       this.date = date;
     },
+    random(){
+        const rand = Math.random()*1000; //multiply to generate random number between 0, 100
+        this.sessionCode = rand
+    }
   },
   mounted() {
     document.getElementById("modalkey").addEventListener('click', function () {

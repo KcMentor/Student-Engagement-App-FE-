@@ -1,11 +1,17 @@
 <template>
-  <div class="row" >
-    <div class="col s12" >
+  <div class="row">
+    <div class="col s12">
       <div class="card my-color-card" style="height:10vh;">
-        <div class="card-content col s12" >
-          <a class="modal-trigger" data-target="modal1" id="modalkey" href="#modal1" >
-            <i class="small material-icons my-color" style="display:inline-block;vertical-align:top;margin-top:0px">add_circle_outline</i>
-            <h5 class="my-color" style="display:inline-block;padding-left:2vw;margin-top:0px">Create Question Bank</h5>
+        <div class="card-content col s12">
+          <a class="modal-trigger" data-target="modal1" id="modalkey" href="#modal1">
+            <i
+              class="small material-icons my-color"
+              style="display:inline-block;vertical-align:top;margin-top:0px"
+            >add_circle_outline</i>
+            <h5
+              class="my-color"
+              style="display:inline-block;padding-left:2vw;margin-top:0px"
+            >Create Question Bank</h5>
           </a>
           <div id="modal1" class="modal">
             <div class="modal-content">
@@ -33,20 +39,26 @@
   </div>
 
   <div v-if="isLoaded">
-   <div >
-     <ul class="collection with-header">
-       <li class="collection-header" style="color:#4e2d68"><h4>Your Question Banks</h4></li>
-       <li class="collection-item" style="color:#4e2d68" v-for="(i, index) in questions" :key="i"><div>{{index}}{{i}}<a class="secondary-content"><router-link :to="'/addQuestion/' + index"><i class="material-icons">send</i></router-link></a></div></li>
-     </ul>
-       
-   </div>
-</div>
+    <div>
+      <ul class="collection with-header">
+        <li class="collection-header" style="color:#4e2d68">
+          <h4>Your Question Banks</h4>
+        </li>
+        <li class="collection-item" style="color:#4e2d68" v-for="(i, index) in questions" :key="i">
+          <div>
+            {{ index }}{{ i }}
+            <a class="secondary-content">
+              <router-link :to="'/addQuestion/' + index">
+                <i class="material-icons">send</i>
+              </router-link>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-<div v-else>
-    Loading...
-</div>
-
-  
+  <div v-else>Loading...</div>
 </template>
 
 
@@ -79,7 +91,7 @@ export default {
       db.collection('users').doc(this.myUID).collection('Bank').doc(bankName).set(data)
     },
   },
-   mounted() {
+  mounted() {
     document.getElementById("modalkey").addEventListener('click', function () {
       var elems = document.querySelectorAll('.modal');
       var instances = M.Modal.init(elems);
@@ -89,21 +101,21 @@ export default {
       this.myUID = uid;
     })
     // var refer = []
-      if(firebase.auth().currentUser){
+    if (firebase.auth().currentUser) {
       const data = db.collection('users').doc(firebase.auth().currentUser.uid).collection('Bank').get().then((snapshot) => {
-      snapshot.forEach(doc => {
-        // refer.push(doc.id)
-        this.questions.push(doc.id)
-        console.log(doc.id)
-      }) 
-    })
-    // this.questions = refer;
+        snapshot.forEach(doc => {
+          // refer.push(doc.id)
+          this.questions.push(doc.id)
+          console.log(doc.id)
+        })
+      })
+      // this.questions = refer;
     }
     console.log(this.questions)
-    
+
     this.isLoaded = true;
   },
-  
+
 };
 </script>
 
@@ -115,7 +127,7 @@ export default {
   background-color: #ede7f0;
 }
 .card-content {
-  text-align:center;
+  text-align: center;
 }
 .card {
   margin: 1vh 1vw;
