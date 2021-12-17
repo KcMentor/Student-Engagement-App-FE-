@@ -8,8 +8,8 @@
     </div>
   </div>
   </div>
-  <div class="container center-align selection" style="background-color:#d1c4e9;width:100vw;height:26vh;">
-   <div class="row option" >
+  <div class="container center-align selection" style="background-color:#d1c4e9;width:100vw;">
+   <div class="row option" style="">
     <div class="col s12 center align" >
    <p style="font-size:5vw;margin:0px;color:#350b49">Session Wizard</p>
    <i class="material-icons" style="font-size:15vw;">school</i>
@@ -25,7 +25,7 @@
    
 
 
-      <div class=" card-panel my-color-card class-engagement-wrapper">
+      <div class=" card-panel my-color-card class-engagement-wrapper" style="margin-top:50px">
         <table class="highlight centered responsive-table">
             <thead>
             <tr>
@@ -41,8 +41,8 @@
         </table>
     </div>
    
-      <div class=" card-panel my-color-card student-engaged-wrapper ">
-        <table class="highlight centered responsive-table">
+      <div class=" card-panel my-color-card student-engaged-wrapper " >
+        <table class="highlight centered responsive-table" style="">
             <thead>
             <tr>
                 <th>MOST ENGAGED STUDENT</th>
