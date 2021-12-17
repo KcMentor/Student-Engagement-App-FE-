@@ -26,13 +26,20 @@
         </div>
         <div id="modal1" class="modal">
           <div class="modal-content">
-            <h4>Select Question</h4>
-            <ul class="collection with-header">
-              <li
-                v-for="(i, index) in questionBanks"
-                :key="i"
-              >{{ index }}|{{ i }}</li>
-            </ul>
+            <div v-if="isLoaded" >
+   <div >
+     <ul class="collection with-header" >
+       <li class="collection-header" style="color:#4e2d68"><h4>Select Question Bank to Start Session</h4></li>
+       <li class="collection-item" style="color:#4e2d68" v-for="(i, index) in questionBank" :key="i">{{index}}|{{i}}</li>
+     </ul>
+       
+   </div>
+</div>
+
+<div v-else>
+    Loading...
+</div>
+
           </div>
           <div class="modal-footer">
             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
@@ -82,10 +89,10 @@ import db from '../main.js'
 export default {
   data() {
     return {
-      loggedIn: false,
       date: null,
       time: null,
       questionBank: [],
+      isLoaded : false
     }
   },
   methods: {
@@ -111,7 +118,7 @@ export default {
       this.myUID = uid;
     })
 
-    var temp = []
+
     if (firebase.auth().currentUser) {
       const data = db.collection('users').doc(firebase.auth().currentUser.uid).collection('Bank').get().then((snapshot) => {
         snapshot.forEach(doc => {
@@ -122,6 +129,7 @@ export default {
       })
     }
     console.log(this.questionBank)
+    this.isLoaded = true;
     this.currentDateTime();
   }
 
