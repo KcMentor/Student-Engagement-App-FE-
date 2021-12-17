@@ -27,7 +27,12 @@
         <div id="modal1" class="modal">
           <div class="modal-content">
             <h4>Select Question</h4>
-              <p>{{questionBank[5]}}</p>
+            <ul class="collection with-header">
+              <li
+                v-for="(i, index) in questionBanks"
+                :key="i"
+              >{{ index }}|{{ i }}</li>
+            </ul>
           </div>
           <div class="modal-footer">
             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
@@ -108,14 +113,14 @@ export default {
 
     var temp = []
     if (firebase.auth().currentUser) {
-      const data = db.collection('users').doc(firebase.auth().currentUser.uid).collection('Bank').get().then(function (snapshot) {
+      const data = db.collection('users').doc(firebase.auth().currentUser.uid).collection('Bank').get().then((snapshot) => {
         snapshot.forEach(doc => {
           // console.log(doc.id)
-          temp.push(doc.id)
+          this.questionBank.push(doc.id)
+          
         })
       })
     }
-    this.questionBank = temp;
     console.log(this.questionBank)
     this.currentDateTime();
   }
