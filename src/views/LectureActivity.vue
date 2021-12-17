@@ -1,7 +1,7 @@
 <template>
   <div class="row" >
     <div class="col s12" >
-      <div class="card my-color-card" style="height:8vh;">
+      <div class="card my-color-card" style="height:10vh;">
         <div class="card-content col s12" >
           <a class="modal-trigger" data-target="modal1" id="modalkey" href="#modal1" >
             <i class="small material-icons my-color" style="display:inline-block;vertical-align:top;margin-top:0px">add_circle_outline</i>
