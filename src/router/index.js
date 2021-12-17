@@ -6,7 +6,7 @@ import lecturerActivity from '../views/LectureActivity'
 import Login from '../views/Login'
 import Join from '../views/JoinSession'
 import Analytics from '../views/Analytics'
-import LectureSession from '../views/LectureSession'
+import Session from '../views/Session'
 import firebase from "firebase"
 
 const routes = [
@@ -46,9 +46,9 @@ const routes = [
     component: Login
   },
   {
-    path: "/lectureSession",
-    name: "lectrueSession",
-    component: LectureSession,
+    path: "/session",
+    name: "session",
+    component: Session,
     meta:{requiresAuth: true }
   
   },

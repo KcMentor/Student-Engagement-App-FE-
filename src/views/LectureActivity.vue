@@ -31,7 +31,7 @@
       </div>
     </div>
   </div>
-  <p v-for="question in questions" :key="question">{{question}}</p>
+  <p v-for="question in questions" :key="question">{{ question }}</p>
 </template>
 
 
@@ -74,12 +74,12 @@ export default {
       this.myUID = uid;
     })
 
-    if(firebase.auth().currentUser){
-      const data = db.collection('users').doc(firebase.auth().currentUser.uid).collection('Bank').get().then(function(snapshot){
-      snapshot.forEach(doc => {
-        console.log(doc.id)
+    if (firebase.auth().currentUser) {
+      const data = db.collection('users').doc(firebase.auth().currentUser.uid).collection('Bank').get().then(function (snapshot) {
+        snapshot.forEach(doc => {
+          console.log(doc.id)
+        })
       })
-    })
     }
   },
 };

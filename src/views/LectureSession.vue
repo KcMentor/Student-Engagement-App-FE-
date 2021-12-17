@@ -12,7 +12,7 @@
         <path
           class="path1"
           d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"
-        ></path>
+        />
       </svg>
     </button>
   </form>
@@ -22,33 +22,23 @@
       <div class="col s12 m6">
         <div class="card #d1c4e9 deep-purple lighten-4 card-1">
           <div class="card-content my-color">
-            <a
-              class="modal-trigger"
-              data-target="modal1"
-              id="modalkey"
-              href="#modal1"
-            >
+            <a class="modal-trigger" data-target="modal1" id="modalkey" href="#modal1">
               <i class="large material-icons my-color">add_circle_outline</i>
             </a>
 
-              <div id="modal1" class="modal">
-            <div class="modal-content">
-              <h4>Modal Header</h4>
-              <p>A bunch of text</p>
+            <div id="modal1" class="modal">
+              <div class="modal-content">
+                <h4>Modal Header</h4>
+                <p>A bunch of text</p>
+              </div>
+              <div class="modal-footer">
+                <a class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+              </div>
             </div>
-            <div class="modal-footer">
-              <a
-                class="
-                  modal-action modal-close
-                  waves-effect waves-green
-                  btn-flat
-                "
-                >Agree</a
-              >
-            </div>
-          </div>
 
-            <span class="card-title"><b>Create Session</b></span>
+            <span class="card-title">
+              <b>Create Session</b>
+            </span>
           </div>
         </div>
       </div>
@@ -62,10 +52,16 @@
               <i class="material-icons my-color right">clear</i>
             </a>
             <span class="card-title center">
-              <b><br />Theory of Computing</b> <br />COMP 3602</span
-            >
+              <b>
+                <br />Theory of Computing
+              </b>
+              <br />COMP 3602
+            </span>
             <div class="card-action #ede7f0">
-              <p>10:00AM - 11:00AM <br />15th Jan, 2022</p>
+              <p>
+                10:00AM - 11:00AM
+                <br />15th Jan, 2022
+              </p>
             </div>
           </div>
         </div>
@@ -82,9 +78,9 @@ export default {
       var elems = document.querySelectorAll(".modal");
       var instances = M.Modal.init(elems);
     });
-      document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       M.AutoInit();
-  });
+    });
   },
 };
 </script>
