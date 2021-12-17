@@ -19,7 +19,7 @@ const routes = [
     path: "/lectureHome",
     name: "lectureHome",
     component: LectureHome,
-    // meta:{requiresAuth: true }
+    meta:{requiresAuth: true }
   },
   {
     path: "/home",
