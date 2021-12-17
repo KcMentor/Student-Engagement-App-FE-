@@ -32,7 +32,7 @@
        <li class="collection-header" style="color:#4e2d68"><h4>Select Question Bank to Start Session</h4></li>
         <li class="collection-item" style="color:#4e2d68" v-for="(i, index) in questionBank" :key="i">
           <div>
-            {{ index }}. {{ i }}
+             {{ i }}
             <a class="secondary-content">
               <router-link :to="'/session/' + index">
                 <i class="material-icons">send</i>
