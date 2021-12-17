@@ -26,8 +26,8 @@
         </div>
         <div id="modal1" class="modal">
           <div class="modal-content">
-            <h4>Modal Header</h4>
-            <p>A bunch of text</p>
+            <h4>Select Question</h4>
+              <p>{{questionBank[5]}}</p>
           </div>
           <div class="modal-footer">
             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
@@ -44,7 +44,6 @@
           <th>LAST CLASS ENGAGEMENT</th>
         </tr>
       </thead>
-
       <tbody>
         <tr>
           <td>N/A</td>
@@ -73,12 +72,15 @@
 <script>
 import M from 'materialize-css'
 import firebase from 'firebase'
+import "firebase/auth";
+import db from '../main.js'
 export default {
   data() {
     return {
       loggedIn: false,
       date: null,
-      time: null
+      time: null,
+      questionBank: [],
     }
   },
   methods: {
@@ -99,6 +101,22 @@ export default {
     document.addEventListener('DOMContentLoaded', function () {
       M.AutoInit();
     });
+    firebase.auth().onAuthStateChanged((user) => {
+      var uid = user.uid;
+      this.myUID = uid;
+    })
+
+    var temp = []
+    if (firebase.auth().currentUser) {
+      const data = db.collection('users').doc(firebase.auth().currentUser.uid).collection('Bank').get().then(function (snapshot) {
+        snapshot.forEach(doc => {
+          // console.log(doc.id)
+          temp.push(doc.id)
+        })
+      })
+    }
+    this.questionBank = temp;
+    console.log(this.questionBank)
     this.currentDateTime();
   }
 
@@ -110,6 +128,9 @@ export default {
   border: 1px solid #350b49;
   border-radius: 5px;
   margin: 0px;
+}
+.modal {
+  color: #350b49;
 }
 </style>
 
