@@ -20,10 +20,10 @@
               </div>
             </div>
             <div class="modal-footer">
-              <a class="modal-action modal-close waves-effect waves-green btn-flat">ADD</a>
+              <a class="modal-action modal-close waves-effect waves-green btn-flat" @click="questionBankName()">ADD</a>
+      
             </div>
           </div>
-
           <h4>Create Question Bank</h4>
         </div>
       </div>
@@ -36,16 +36,23 @@
 <script>
 import $ from "jquery";
 import M from "materialize-css";
-import firebase from 'firebase'
+import firebase from 'firebase';
+import db from '../main.js'
 
 // class="modal-trigger" data-target="modal1"
 
 export default {
   name: "lecturerAcitivity",
   components: {},
+  data() {
+    return {  
+    }
+  },
   methods: {
-    showMode: function () {
-
+    questionBankName: function () {
+      var bankName = document.getElementById("question-bank-name").value;
+      console.log(bankName);
+      
     },
   },
   mounted() {
