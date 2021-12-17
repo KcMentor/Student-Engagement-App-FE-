@@ -69,14 +69,14 @@ export default {
       router.push({name: 'lectureHome', params: {uid}})
       const data={
       }
-      db.collection('users').doc(uid).collection('Bank').doc('qBank1').collection('Questions').doc('question1')
+      db.collection('users').doc(uid)
   .update({data})
   .then(() => {
     // update successful (document exists)
   })
   .catch((error) => {
     // console.log('Error updating user', error); // (document does not exists)
-    db.collection('users').doc(uid).collection('Bank').doc('qBank1').collection('Questions').doc('question1').set({data});
+    db.collection('users').doc(uid).set({data});
   });
     } else {
       // User is signed out
